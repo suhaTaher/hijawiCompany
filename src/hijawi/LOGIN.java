@@ -5,6 +5,12 @@
  */
 package hijawi;
 
+import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author ASUS
@@ -231,6 +237,39 @@ public class LOGIN extends javax.swing.JFrame {
 
     private void LogInButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButton1ActionPerformed
         // TODO add your handling code here:
+                int id=Integer.parseInt(UserName2.getText());
+String password=Password1.getText();
+ Connection connection;
+        PreparedStatement ps;
+           try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+            ps = connection.prepareStatement("select * from user where id = ? AND password = ?");
+            ps.setInt(1, id );
+            ps.setString(2, password );
+            ResultSet rs = ps.executeQuery();
+            
+             if(rs.next())
+             {
+                 String type=rs.getString(4);
+                 if(type.equals("planner")){
+                    planner p=new planner(rs.getString(1)); 
+                 this.setVisible(false);
+                     p.setVisible(true);
+                 }
+                 else  if(type.equals("مسؤول المخازن"))
+                 JOptionPane.showMessageDialog(this, "مرحبا بمسؤول المخازن");
+                 else  if(type.equals("مدير المبيعات"))
+                 JOptionPane.showMessageDialog(this, "مرحبا بمدير المبيعات");
+                 
+             }
+             else 
+             {
+                 JOptionPane.showMessageDialog(this, "invaled account or password");
+             }
+             
+        } catch (Exception ex ) {
+            JOptionPane.showMessageDialog(this,"Wrong Email and/or Password \n"+ex );
+        }    
     }//GEN-LAST:event_LogInButton1ActionPerformed
 
     /**

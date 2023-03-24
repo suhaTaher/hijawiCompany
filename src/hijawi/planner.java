@@ -7,12 +7,24 @@ package hijawi;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Component;
+import java.awt.HeadlessException;
+import java.security.SecureRandom;
 import java.awt.FlowLayout;
 import java.awt.Frame;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ASUS
@@ -23,10 +35,16 @@ public class planner extends javax.swing.JFrame {
      * Creates new form planner
      */
       private CardLayout cardLayout;
-    public planner() {
+      private final String username;
+    public planner(String username) {
         initComponents();
         cardLayout = (CardLayout) screenCard.getLayout();
+
+         this.username=username;
+        this.jLabel2.setText(username);
     }
+    
+    
     
     void setColor(JPanel panel) {
         panel.setBackground(new Color(10, 35, 47));
@@ -111,6 +129,8 @@ public class planner extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         WorkerPassWord = new javax.swing.JTextField();
+        workertype = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
         searchToolCard = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -144,7 +164,6 @@ public class planner extends javax.swing.JFrame {
         Status = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 700));
 
         sidePanel.setBackground(new java.awt.Color(17, 45, 57));
 
@@ -570,22 +589,29 @@ public class planner extends javax.swing.JFrame {
         });
         jPanel3.add(WorkerPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 35));
 
+        jLabel30.setText("المسمى الوظيفي");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(353, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(namepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(36, 36, 36))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addComponent(addworkertoDB, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(353, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(namepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(workertype, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel30)))
+                .addGap(27, 27, 27))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(354, Short.MAX_VALUE)
@@ -601,7 +627,11 @@ public class planner extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(workertype, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
                 .addComponent(addworkertoDB, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -632,7 +662,7 @@ public class planner extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         screenCard.add(workerCard, "card2");
@@ -913,7 +943,10 @@ public class planner extends javax.swing.JFrame {
     }//GEN-LAST:event_AddWorkerMousePressed
 
     private void signOutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signOutMousePressed
-        // TODO add your handling code here:
+        // TODO add your handling code here:                                    
+          LOGIN login=new LOGIN(); 
+          this.setVisible(false);
+            login.setVisible(true);
     }//GEN-LAST:event_signOutMousePressed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -933,7 +966,55 @@ public class planner extends javax.swing.JFrame {
     }//GEN-LAST:event_workerIDActionPerformed
 
     private void addworkertoDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addworkertoDBActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:                                              
+
+        String workername=this.name1.getText();
+        String email=this.name.getText();
+//String id=this.workerID.getText();
+//String password=this.WorkerPassWord.getText();
+        String type=this.workertype.getText();
+        Connection connection;
+        PreparedStatement ps,p;
+           try { 
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        SecureRandom random = new SecureRandom();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <6; i++)
+        {
+            int randomIndex = random.nextInt(chars.length());
+            sb.append(chars.charAt(randomIndex));
+        }
+        String password=sb.toString();
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+
+             ps = connection.prepareStatement("INSERT INTO user (username,password,eamil,type)VALUES (?,?,?,?)");
+             ps.setString(1,workername);
+             ps.setString(2,password);
+             ps.setString(3,email);
+             ps.setString(4,type);
+             boolean rs = ps.execute();
+            
+             if(!rs)
+             {
+            p = connection.prepareStatement("select * from user where username = ?");
+            p.setString(1,workername);
+            ResultSet s = p.executeQuery();
+             if(s.next()){
+             int id=s.getInt(5);
+                  JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n id="+id+"\n password="+password);
+             }
+             }
+             else 
+             {
+                
+               JOptionPane.showMessageDialog(this, "Erorr");  
+             }
+             
+        } catch (HeadlessException | SQLException ex ) {
+            JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+        }        // TODO add your handling
+
+    
     }//GEN-LAST:event_addworkertoDBActionPerformed
 
     private void searchKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchKeyActionPerformed
@@ -1010,7 +1091,7 @@ public class planner extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new planner().setVisible(true);
+                new planner("").setVisible(true);
             }
         });
     }
@@ -1067,6 +1148,7 @@ public class planner extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1111,5 +1193,6 @@ public class planner extends javax.swing.JFrame {
     private javax.swing.JLabel signOut;
     private javax.swing.JPanel workerCard;
     private javax.swing.JTextField workerID;
+    private javax.swing.JTextField workertype;
     // End of variables declaration//GEN-END:variables
 }
