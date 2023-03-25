@@ -4,24 +4,17 @@
  * and open the template in the editor.
  */
 package hijawi;
-import java.awt.BorderLayout;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.security.SecureRandom;
-import java.awt.FlowLayout;
-import java.awt.Frame;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -527,6 +520,11 @@ public class planner extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jButton1.setText("بحث");
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 0, 80, 40));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1607,6 +1605,167 @@ public class planner extends javax.swing.JFrame {
 
         cardLayout2.show(orderCards, "card2");
     }//GEN-LAST:event_newOrderMousePressed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        // TODO add your handling code here:
+        String TypeOfTool1="";
+       String size1="";
+       String JobOfTool1="";
+       String supplier1="";
+       String status1="";
+       int status;
+       int size=0;
+       int flag=0;
+       int isle=0;
+       int shelf=0;
+       int ordernumber1=0;
+       int colornumber1=0;
+        
+        String search=this.searchKey.getText();
+        char TypeOfTool=search.charAt(0);
+        Connection connection;
+        PreparedStatement ps,ps1,ps2;    
+       
+        switch (TypeOfTool) {
+            case 'D':
+                try {
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps = connection.prepareStatement("select * from dicut where name= ?");
+                    ps.setString(1,search );
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next())
+                    {
+                        TypeOfTool1=rs.getString(2);
+                        JobOfTool1=rs.getString(3);
+                        size=rs.getInt(4);
+                        status=rs.getInt(5);
+                        supplier1=rs.getString(8);
+                        isle=rs.getInt(9);
+                        shelf=rs.getInt(10);
+                        ordernumber1=rs.getInt(11);
+                        if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                            case 1:
+                                size1="30*20";
+                                break;
+                            case 2:
+                                size1="50*60";
+                                break;
+                            case 3:
+                                size1="70*60";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break; 
+            case 'P':
+                try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps1 = connection.prepareStatement("select * from iplate where name= ?");
+                    ps1.setString(1,search );
+                    ResultSet rs1 = ps1.executeQuery();
+                    if(rs1.next())
+                    {
+                        Vector data = new Vector();
+                         ps2 = connection.prepareStatement("select * from color where platename= ?");
+                         ps2.setString(1,search );
+                         ResultSet rs2 = ps2.executeQuery();
+                         while(rs2.next()){
+                             
+                            data.addElement(rs2.getString(2));
+                         }
+                             this.Colors.setListData(data);
+                        TypeOfTool1=rs1.getString(2);
+                        JobOfTool1=rs1.getString(3);
+                        size=rs1.getInt(4);
+                        status=rs1.getInt(5);
+                        flag=rs1.getInt(6);
+                        isle=rs1.getInt(8);
+                        shelf=rs1.getInt(9);
+                        ordernumber1=rs1.getInt(10);
+                        colornumber1=rs1.getInt(11);
+                  
+                          if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                            case 1:
+                                size1="30*20";
+                                break;
+                            case 2:
+                                size1="50*60";
+                                break;
+                            case 3:
+                                size1="70*60";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break;
+            case 'C':
+                try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps1 = connection.prepareStatement("select * from iclasheh where name= ?");
+                    ps1.setString(1,search );
+                    ResultSet rs1 = ps1.executeQuery();
+                    if(rs1.next())
+                    {
+                        TypeOfTool1=rs1.getString(2);
+                        JobOfTool1=rs1.getString(3);
+                        size=rs1.getInt(4);
+                        status=rs1.getInt(5);
+                        isle=rs1.getInt(8);
+                        shelf=rs1.getInt(9);
+                        ordernumber1=rs1.getInt(10);
+                        if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                            case 1:
+                                size1="30*20";
+                                break;
+                            case 2:
+                                size1="50*60";
+                                break;
+                            case 3:
+                                size1="70*60";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break;
+            default:
+                JOptionPane.showMessageDialog(this,"Not Found" );
+                break;
+        }
+        
+this.Tool_name.setText(TypeOfTool1);
+this.Supplier.setText(supplier1);
+this.Tool_size.setText(size1);
+this.sector.setText(JobOfTool1);
+this.aisle.setText(Integer.toString(isle));
+this.shelf.setText(Integer.toString(shelf));
+this.Status.setText(status1);
+this.colorNo.setText(Integer.toString(colornumber1));
+    }//GEN-LAST:event_jButton1KeyPressed
 
     /**
      * @param args the command line arguments
