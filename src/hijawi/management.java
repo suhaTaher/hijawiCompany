@@ -25,6 +25,10 @@ public class management extends javax.swing.JFrame {
         initComponents();
         cardLayout = (CardLayout) cards.getLayout();
         
+       /* LOGIN login=new LOGIN(); 
+          this.setVisible(false);
+            login.setVisible(true);*/
+        
     }
     
       void setColor(JPanel panel) {

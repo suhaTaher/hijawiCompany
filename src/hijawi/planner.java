@@ -43,6 +43,9 @@ public class planner extends javax.swing.JFrame {
         cardLayout2 = (CardLayout) orderCards.getLayout();
          this.username=username;
         this.jLabel2.setText(username);
+        LOGIN login=new LOGIN(); 
+          this.setVisible(false);
+            login.setVisible(true);
     }
     
     
