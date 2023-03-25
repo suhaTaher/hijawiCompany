@@ -904,7 +904,7 @@ public class planner extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("بحث عن اداة");
+        jLabel20.setText("رقم الطلبية");
         jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 102, 38));
 
         searchKey1.addActionListener(new java.awt.event.ActionListener() {
@@ -1039,7 +1039,7 @@ public class planner extends javax.swing.JFrame {
         jPanel20.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 150, 120));
 
         lable.setForeground(new java.awt.Color(255, 0, 0));
-        lable.setText("statusOF the tool");
+        lable.setText("statusOF the order");
 
         tooState.setEditable(false);
         tooState.addActionListener(new java.awt.event.ActionListener() {
@@ -1096,6 +1096,7 @@ public class planner extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
+        Delete.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         Delete.setText("حذف");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1583,7 +1584,7 @@ public class planner extends javax.swing.JFrame {
         setColor(orderLists);
         resetColor(newOrder);
 
-        cardLayout2.show(orderCards, "card2");
+        cardLayout2.show(orderCards, "card4");
     }//GEN-LAST:event_orderListsMousePressed
 
     private void Search_DeleteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Search_DeleteMousePressed
@@ -1592,7 +1593,7 @@ public class planner extends javax.swing.JFrame {
         resetColor(orderLists);
         resetColor(newOrder);
 
-        cardLayout2.show(orderCards, "card4");
+        cardLayout2.show(orderCards, "card3");
     }//GEN-LAST:event_Search_DeleteMousePressed
 
     private void newOrderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newOrderMousePressed
@@ -1601,7 +1602,7 @@ public class planner extends javax.swing.JFrame {
         resetColor(orderLists);
        setColor(newOrder);
 
-        cardLayout2.show(orderCards, "card3");
+        cardLayout2.show(orderCards, "card2");
     }//GEN-LAST:event_newOrderMousePressed
 
     /**
