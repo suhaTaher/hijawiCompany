@@ -35,11 +35,12 @@ public class planner extends javax.swing.JFrame {
      * Creates new form planner
      */
       private CardLayout cardLayout;
+       private CardLayout cardLayout2;
       private final String username;
     public planner(String username) {
         initComponents();
         cardLayout = (CardLayout) screenCard.getLayout();
-
+        cardLayout2 = (CardLayout) orderCards.getLayout();
          this.username=username;
         this.jLabel2.setText(username);
     }
@@ -80,39 +81,6 @@ public class planner extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         signOut = new javax.swing.JLabel();
         screenCard = new javax.swing.JPanel();
-        addReqCard = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        aisle1 = new javax.swing.JTextField();
-        shelf1 = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        Tool = new javax.swing.JComboBox<>();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        Size = new javax.swing.JComboBox<>();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        colorNo1 = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        Blue = new javax.swing.JRadioButton();
-        Yellow = new javax.swing.JRadioButton();
-        Red = new javax.swing.JRadioButton();
-        Black = new javax.swing.JRadioButton();
-        order = new javax.swing.JButton();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        plateSizes = new javax.swing.JComboBox<>();
         workerCard = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -162,11 +130,87 @@ public class planner extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Colors = new javax.swing.JList<>();
         Status = new javax.swing.JLabel();
-        OrderListpanel = new javax.swing.JPanel();
+        orders = new javax.swing.JPanel();
+        toppanelOrders = new javax.swing.JPanel();
+        ToolSearch1 = new javax.swing.JPanel();
+        AddReq1 = new javax.swing.JPanel();
+        orderLists = new javax.swing.JPanel();
+        ListOrder = new javax.swing.JLabel();
+        Search_Delete = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        newOrder = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        orderCards = new javax.swing.JPanel();
+        ListsCard = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        jScrollBar1 = new javax.swing.JScrollBar();
+        SearchDeleteCard = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        searchKey1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        aisle1 = new javax.swing.JTextField();
+        shelf1 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        sector1 = new javax.swing.JTextField();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        Tool_name1 = new javax.swing.JTextField();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        Tool_size1 = new javax.swing.JTextField();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        Supplier1 = new javax.swing.JTextField();
+        jPanel20 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        colorNo1 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Colors1 = new javax.swing.JList<>();
+        lable = new javax.swing.JLabel();
+        tooState = new javax.swing.JTextField();
+        Delete = new javax.swing.JButton();
+        AddOrderCard = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
-        jScrollBar2 = new javax.swing.JScrollBar();
-        deleteOrderbtn = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        aisle2 = new javax.swing.JTextField();
+        shelf2 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        Tool1 = new javax.swing.JComboBox<>();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        Size1 = new javax.swing.JComboBox<>();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jPanel28 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        colorNo2 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        Blue1 = new javax.swing.JRadioButton();
+        Yellow1 = new javax.swing.JRadioButton();
+        Red1 = new javax.swing.JRadioButton();
+        Black1 = new javax.swing.JRadioButton();
+        order1 = new javax.swing.JButton();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        plateSizes1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -240,7 +284,7 @@ public class planner extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("اضافة طلبية");
+        jLabel4.setText("الطلبيات");
         AddReq.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, -1));
 
         AddWorker.setBackground(new java.awt.Color(17, 45, 57));
@@ -317,214 +361,6 @@ public class planner extends javax.swing.JFrame {
         );
 
         screenCard.setLayout(new java.awt.CardLayout());
-
-        addReqCard.setPreferredSize(new java.awt.Dimension(686, 597));
-
-        jLabel6.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("اضافة طلبية ");
-
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel20.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("موقع التخزين");
-        jPanel14.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 74, 26));
-
-        aisle1.setEditable(false);
-        aisle1.setBackground(new java.awt.Color(255, 255, 255));
-        aisle1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aisle1ActionPerformed(evt);
-            }
-        });
-        jPanel14.add(aisle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
-
-        shelf1.setEditable(false);
-        shelf1.setBackground(new java.awt.Color(255, 255, 255));
-        shelf1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shelf1ActionPerformed(evt);
-            }
-        });
-        jPanel14.add(shelf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 150, 40));
-
-        jLabel22.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel22.setText("الرف");
-        jPanel14.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 40));
-
-        jLabel23.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel23.setText("الممر");
-        jPanel14.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 50, 40));
-
-        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel24.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("القطاع");
-        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مطاعم", "مدارس", "مكاتب", "شركات خاصة" }));
-        jPanel15.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
-
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel25.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("نوع الاداة");
-        jPanel16.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
-
-        Tool.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dicut", "IClasheh", "IPlate" }));
-        jPanel16.add(Tool, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
-
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel26.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("الحجم");
-        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
-
-        Size.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "70*100", "50*30", "30*30", "غير ذلك" }));
-        jPanel17.add(Size, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
-
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel27.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("المورد");
-        jPanel18.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ٌRamallah", "NAblus" }));
-        jPanel18.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 40));
-
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        colorNo1.setEditable(false);
-        colorNo1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel19.add(colorNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 150, 40));
-
-        jLabel28.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("عدد الالوان");
-        jPanel19.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 74, 26));
-
-        PLateColors.add(Blue);
-        Blue.setText("Blue");
-        Blue.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BlueActionPerformed(evt);
-            }
-        });
-        jPanel19.add(Blue, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
-
-        PLateColors.add(Yellow);
-        Yellow.setText("Yellow");
-        Yellow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                YellowActionPerformed(evt);
-            }
-        });
-        jPanel19.add(Yellow, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
-
-        PLateColors.add(Red);
-        Red.setText("Red");
-        jPanel19.add(Red, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
-
-        PLateColors.add(Black);
-        Black.setText("Black");
-        jPanel19.add(Black, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
-
-        order.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        order.setText("اضافة الطلب");
-
-        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel29.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("الحجم");
-        jPanel21.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
-
-        plateSizes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "70*100", "50*35", "غير ذلك" }));
-        jPanel21.add(plateSizes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(40, 40, 40)
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout addReqCardLayout = new javax.swing.GroupLayout(addReqCard);
-        addReqCard.setLayout(addReqCardLayout);
-        addReqCardLayout.setHorizontalGroup(
-            addReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addReqCardLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(addReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addReqCardLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addReqCardLayout.createSequentialGroup()
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        addReqCardLayout.setVerticalGroup(
-            addReqCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addReqCardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-
-        screenCard.add(addReqCard, "card4");
 
         workerCard.setPreferredSize(new java.awt.Dimension(686, 597));
 
@@ -667,7 +503,7 @@ public class planner extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         screenCard.add(workerCard, "card2");
@@ -886,56 +722,636 @@ public class planner extends javax.swing.JFrame {
 
         screenCard.add(searchToolCard, "card3");
 
-        OrderListpanel.setPreferredSize(new java.awt.Dimension(700, 597));
+        orders.setPreferredSize(new java.awt.Dimension(700, 597));
+
+        toppanelOrders.setBackground(new java.awt.Color(17, 44, 56));
+
+        ToolSearch1.setBackground(new java.awt.Color(17, 45, 57));
+        ToolSearch1.setForeground(new java.awt.Color(255, 255, 255));
+        ToolSearch1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ToolSearch1MousePressed(evt);
+            }
+        });
+        ToolSearch1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AddReq1.setBackground(new java.awt.Color(17, 45, 57));
+        AddReq1.setForeground(new java.awt.Color(255, 255, 255));
+        AddReq1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AddReq1MousePressed(evt);
+            }
+        });
+        AddReq1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        orderLists.setBackground(new java.awt.Color(17, 44, 56));
+        orderLists.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                orderListsMousePressed(evt);
+            }
+        });
+
+        ListOrder.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        ListOrder.setForeground(new java.awt.Color(255, 255, 255));
+        ListOrder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ListOrder.setText("لائحة الطلبات");
+
+        javax.swing.GroupLayout orderListsLayout = new javax.swing.GroupLayout(orderLists);
+        orderLists.setLayout(orderListsLayout);
+        orderListsLayout.setHorizontalGroup(
+            orderListsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ListOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        orderListsLayout.setVerticalGroup(
+            orderListsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, orderListsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ListOrder)
+                .addGap(31, 31, 31))
+        );
+
+        Search_Delete.setBackground(new java.awt.Color(17, 44, 56));
+        Search_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Search_DeleteMousePressed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("بحث و حذف");
+
+        javax.swing.GroupLayout Search_DeleteLayout = new javax.swing.GroupLayout(Search_Delete);
+        Search_Delete.setLayout(Search_DeleteLayout);
+        Search_DeleteLayout.setHorizontalGroup(
+            Search_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Search_DeleteLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        Search_DeleteLayout.setVerticalGroup(
+            Search_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Search_DeleteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel36)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        newOrder.setBackground(new java.awt.Color(17, 44, 56));
+        newOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                newOrderMousePressed(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("اضافة طلبية");
+
+        javax.swing.GroupLayout newOrderLayout = new javax.swing.GroupLayout(newOrder);
+        newOrder.setLayout(newOrderLayout);
+        newOrderLayout.setHorizontalGroup(
+            newOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newOrderLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        newOrderLayout.setVerticalGroup(
+            newOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newOrderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout toppanelOrdersLayout = new javax.swing.GroupLayout(toppanelOrders);
+        toppanelOrders.setLayout(toppanelOrdersLayout);
+        toppanelOrdersLayout.setHorizontalGroup(
+            toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelOrdersLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddReq1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(toppanelOrdersLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(Search_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+        );
+        toppanelOrdersLayout.setVerticalGroup(
+            toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toppanelOrdersLayout.createSequentialGroup()
+                .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Search_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(ToolSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AddReq1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        orderCards.setLayout(new java.awt.CardLayout());
+
+        jLabel6.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        jLabel6.setText("لائحة الطلبيات ");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
+                .addGap(0, 634, Short.MAX_VALUE)
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout ListsCardLayout = new javax.swing.GroupLayout(ListsCard);
+        ListsCard.setLayout(ListsCardLayout);
+        ListsCardLayout.setHorizontalGroup(
+            ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListsCardLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        ListsCardLayout.setVerticalGroup(
+            ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListsCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        orderCards.add(ListsCard, "card4");
+
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("بحث عن اداة");
+        jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 102, 38));
+
+        searchKey1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchKey1ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(searchKey1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 290, 40));
+
+        jButton2.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jButton2.setText("بحث");
+        jPanel13.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 0, 80, 40));
+
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("موقع التخزين");
+        jPanel15.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 74, 26));
+
+        aisle1.setEditable(false);
+        aisle1.setBackground(new java.awt.Color(255, 255, 255));
+        aisle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aisle1ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(aisle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
+
+        shelf1.setEditable(false);
+        shelf1.setBackground(new java.awt.Color(255, 255, 255));
+        shelf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shelf1ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(shelf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 40));
+
+        jLabel23.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel23.setText("الرف");
+        jPanel15.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 40));
+
+        jLabel24.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel24.setText("الممر");
+        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 50, 40));
+
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("القطاع");
+        jPanel16.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        sector1.setEditable(false);
+        sector1.setBackground(new java.awt.Color(255, 255, 255));
+        sector1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sector1ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(sector1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("نوع الاداة");
+        jPanel17.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        Tool_name1.setEditable(false);
+        Tool_name1.setBackground(new java.awt.Color(255, 255, 255));
+        Tool_name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tool_name1ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(Tool_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("الحجم");
+        jPanel18.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        Tool_size1.setEditable(false);
+        Tool_size1.setBackground(new java.awt.Color(255, 255, 255));
+        Tool_size1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tool_size1ActionPerformed(evt);
+            }
+        });
+        jPanel18.add(Tool_size1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("المورد");
+        jPanel19.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        Supplier1.setEditable(false);
+        Supplier1.setBackground(new java.awt.Color(255, 255, 255));
+        Supplier1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Supplier1ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(Supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel20.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        colorNo1.setEditable(false);
+        colorNo1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel20.add(colorNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 150, 40));
+
+        jLabel29.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("عدد الالوان");
+        jPanel20.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 74, 26));
+
+        Colors1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(Colors1);
+
+        jPanel20.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 150, 120));
+
+        lable.setForeground(new java.awt.Color(255, 0, 0));
+        lable.setText("statusOF the tool");
+
+        tooState.setEditable(false);
+        tooState.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tooStateActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 37, Short.MAX_VALUE)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
+                        .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+
+        Delete.setText("حذف");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SearchDeleteCardLayout = new javax.swing.GroupLayout(SearchDeleteCard);
+        SearchDeleteCard.setLayout(SearchDeleteCardLayout);
+        SearchDeleteCardLayout.setHorizontalGroup(
+            SearchDeleteCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchDeleteCardLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
+            .addGroup(SearchDeleteCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SearchDeleteCardLayout.setVerticalGroup(
+            SearchDeleteCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SearchDeleteCardLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(SearchDeleteCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        orderCards.add(SearchDeleteCard, "card3");
 
         jLabel31.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(17, 45, 57));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("لائحة الطلبات/بحث/حذف/اضافة ");
+        jLabel31.setText("اضافة طلبية ");
+
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel32.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("موقع التخزين");
+        jPanel23.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 74, 26));
+
+        aisle2.setEditable(false);
+        aisle2.setBackground(new java.awt.Color(255, 255, 255));
+        aisle2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aisle2ActionPerformed(evt);
+            }
+        });
+        jPanel23.add(aisle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
+
+        shelf2.setEditable(false);
+        shelf2.setBackground(new java.awt.Color(255, 255, 255));
+        shelf2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shelf2ActionPerformed(evt);
+            }
+        });
+        jPanel23.add(shelf2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 150, 40));
+
+        jLabel33.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel33.setText("الرف");
+        jPanel23.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 40));
+
+        jLabel37.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel37.setText("الممر");
+        jPanel23.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 50, 40));
+
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel38.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("القطاع");
+        jPanel24.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مطاعم", "مدارس", "مكاتب", "شركات خاصة" }));
+        jPanel24.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel39.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("نوع الاداة");
+        jPanel25.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        Tool1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dicut", "IClasheh", "IPlate" }));
+        jPanel25.add(Tool1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel40.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("الحجم");
+        jPanel26.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        Size1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "70*100", "50*30", "30*30", "غير ذلك" }));
+        jPanel26.add(Size1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
+
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel41.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("المورد");
+        jPanel27.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ٌRamallah", "NAblus" }));
+        jPanel27.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 40));
+
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        colorNo2.setEditable(false);
+        colorNo2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(colorNo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 150, 40));
+
+        jLabel42.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("عدد الالوان");
+        jPanel28.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 74, 26));
+
+        PLateColors.add(Blue1);
+        Blue1.setText("Blue");
+        Blue1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Blue1ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(Blue1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+
+        PLateColors.add(Yellow1);
+        Yellow1.setText("Yellow");
+        Yellow1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Yellow1ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(Yellow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+
+        PLateColors.add(Red1);
+        Red1.setText("Red");
+        jPanel28.add(Red1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+
+        PLateColors.add(Black1);
+        Black1.setText("Black");
+        jPanel28.add(Black1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
+
+        order1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        order1.setText("اضافة الطلب");
+
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel43.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("الحجم");
+        jPanel30.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
+
+        plateSizes1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "70*100", "50*35", "غير ذلك" }));
+        jPanel30.add(plateSizes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addGap(0, 567, Short.MAX_VALUE)
-                .addComponent(jScrollBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel22Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(order1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-        );
-
-        deleteOrderbtn.setText("حذف طلبية");
-
-        javax.swing.GroupLayout OrderListpanelLayout = new javax.swing.GroupLayout(OrderListpanel);
-        OrderListpanel.setLayout(OrderListpanelLayout);
-        OrderListpanelLayout.setHorizontalGroup(
-            OrderListpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OrderListpanelLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(deleteOrderbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OrderListpanelLayout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addGroup(OrderListpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77))
-        );
-        OrderListpanelLayout.setVerticalGroup(
-            OrderListpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OrderListpanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(deleteOrderbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(order1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        screenCard.add(OrderListpanel, "card4");
+        javax.swing.GroupLayout AddOrderCardLayout = new javax.swing.GroupLayout(AddOrderCard);
+        AddOrderCard.setLayout(AddOrderCardLayout);
+        AddOrderCardLayout.setHorizontalGroup(
+            AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddOrderCardLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
+        );
+        AddOrderCardLayout.setVerticalGroup(
+            AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddOrderCardLayout.createSequentialGroup()
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        orderCards.add(AddOrderCard, "card2");
+
+        javax.swing.GroupLayout ordersLayout = new javax.swing.GroupLayout(orders);
+        orders.setLayout(ordersLayout);
+        ordersLayout.setHorizontalGroup(
+            ordersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(toppanelOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(orderCards, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ordersLayout.setVerticalGroup(
+            ordersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ordersLayout.createSequentialGroup()
+                .addComponent(toppanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(orderCards, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        screenCard.add(orders, "card4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1101,6 +1517,34 @@ public class planner extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SupplierActionPerformed
 
+    private void ToolSearch1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToolSearch1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToolSearch1MousePressed
+
+    private void AddReq1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddReq1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddReq1MousePressed
+
+    private void aisle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aisle2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aisle2ActionPerformed
+
+    private void shelf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shelf2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_shelf2ActionPerformed
+
+    private void Blue1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blue1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Blue1ActionPerformed
+
+    private void Yellow1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yellow1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Yellow1ActionPerformed
+
+    private void searchKey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchKey1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchKey1ActionPerformed
+
     private void aisle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aisle1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aisle1ActionPerformed
@@ -1109,13 +1553,56 @@ public class planner extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_shelf1ActionPerformed
 
-    private void BlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlueActionPerformed
+    private void sector1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sector1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BlueActionPerformed
+    }//GEN-LAST:event_sector1ActionPerformed
 
-    private void YellowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YellowActionPerformed
+    private void Tool_name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tool_name1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_YellowActionPerformed
+    }//GEN-LAST:event_Tool_name1ActionPerformed
+
+    private void Tool_size1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tool_size1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tool_size1ActionPerformed
+
+    private void Supplier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Supplier1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Supplier1ActionPerformed
+
+    private void tooStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tooStateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tooStateActionPerformed
+
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteActionPerformed
+
+    private void orderListsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderListsMousePressed
+        // TODO add your handling code here:
+        resetColor(Search_Delete);
+        setColor(orderLists);
+        resetColor(newOrder);
+
+        cardLayout2.show(orderCards, "card2");
+    }//GEN-LAST:event_orderListsMousePressed
+
+    private void Search_DeleteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Search_DeleteMousePressed
+        // TODO add your handling code here:
+        setColor(Search_Delete);
+        resetColor(orderLists);
+        resetColor(newOrder);
+
+        cardLayout2.show(orderCards, "card4");
+    }//GEN-LAST:event_Search_DeleteMousePressed
+
+    private void newOrderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newOrderMousePressed
+        // TODO add your handling code here:
+        resetColor(Search_Delete);
+        resetColor(orderLists);
+       setColor(newOrder);
+
+        cardLayout2.show(orderCards, "card3");
+    }//GEN-LAST:event_newOrderMousePressed
 
     /**
      * @param args the command line arguments
@@ -1153,36 +1640,48 @@ public class planner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddOrderCard;
     private javax.swing.JPanel AddReq;
+    private javax.swing.JPanel AddReq1;
     private javax.swing.JPanel AddWorker;
-    private javax.swing.JRadioButton Black;
-    private javax.swing.JRadioButton Blue;
+    private javax.swing.JRadioButton Black1;
+    private javax.swing.JRadioButton Blue1;
     private javax.swing.JList<String> Colors;
-    private javax.swing.JPanel OrderListpanel;
+    private javax.swing.JList<String> Colors1;
+    private javax.swing.JButton Delete;
+    private javax.swing.JLabel ListOrder;
+    private javax.swing.JPanel ListsCard;
     private javax.swing.ButtonGroup PLateColors;
-    private javax.swing.JRadioButton Red;
-    private javax.swing.JComboBox<String> Size;
+    private javax.swing.JRadioButton Red1;
+    private javax.swing.JPanel SearchDeleteCard;
+    private javax.swing.JPanel Search_Delete;
+    private javax.swing.JComboBox<String> Size1;
     private javax.swing.JLabel Status;
     private javax.swing.JTextField Supplier;
-    private javax.swing.JComboBox<String> Tool;
+    private javax.swing.JTextField Supplier1;
+    private javax.swing.JComboBox<String> Tool1;
     private javax.swing.JPanel ToolSearch;
+    private javax.swing.JPanel ToolSearch1;
     private javax.swing.JTextField Tool_name;
+    private javax.swing.JTextField Tool_name1;
     private javax.swing.JTextField Tool_size;
+    private javax.swing.JTextField Tool_size1;
     private javax.swing.JTextField WorkerPassWord;
-    private javax.swing.JRadioButton Yellow;
-    private javax.swing.JPanel addReqCard;
+    private javax.swing.JRadioButton Yellow1;
     private javax.swing.JButton addworkertoDB;
     private javax.swing.JTextField aisle;
     private javax.swing.JTextField aisle1;
+    private javax.swing.JTextField aisle2;
     private javax.swing.JTextField colorNo;
     private javax.swing.JTextField colorNo1;
-    private javax.swing.JButton deleteOrderbtn;
+    private javax.swing.JTextField colorNo2;
     private javax.swing.JPanel endReq;
     private javax.swing.JPanel endWorker1;
     private javax.swing.JPanel endtool;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1208,7 +1707,18 @@ public class planner extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1229,29 +1739,49 @@ public class planner extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollBar jScrollBar2;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lable;
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
     private javax.swing.JPanel namepanel;
     private javax.swing.JPanel namepanel1;
-    private javax.swing.JButton order;
-    private javax.swing.JComboBox<String> plateSizes;
+    private javax.swing.JPanel newOrder;
+    private javax.swing.JButton order1;
+    private javax.swing.JPanel orderCards;
+    private javax.swing.JPanel orderLists;
+    private javax.swing.JPanel orders;
+    private javax.swing.JComboBox<String> plateSizes1;
     private javax.swing.JPanel screenCard;
     private javax.swing.JTextField searchKey;
+    private javax.swing.JTextField searchKey1;
     private javax.swing.JPanel searchToolCard;
     private javax.swing.JTextField sector;
+    private javax.swing.JTextField sector1;
     private javax.swing.JTextField shelf;
     private javax.swing.JTextField shelf1;
+    private javax.swing.JTextField shelf2;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JLabel signOut;
+    private javax.swing.JTextField tooState;
+    private javax.swing.JPanel toppanelOrders;
     private javax.swing.JPanel workerCard;
     private javax.swing.JTextField workerID;
     private javax.swing.JTextField workertype;
