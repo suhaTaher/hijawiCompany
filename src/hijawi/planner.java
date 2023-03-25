@@ -43,12 +43,12 @@ public class planner extends javax.swing.JFrame {
     
     
     
-    void setColor(JPanel panel) {
-        panel.setBackground(new Color(10, 35, 47));
+      void setColor(JPanel panel) {
+        panel.setBackground(new Color(204,204,204));
     }
     
     void resetColor(JPanel panel) {
-        panel.setBackground(new Color(17,45,57));
+        panel.setBackground(new Color(255,255,255));
     }
     
 
@@ -76,6 +76,7 @@ public class planner extends javax.swing.JFrame {
         endWorker1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         signOut = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         screenCard = new javax.swing.JPanel();
         workerCard = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -210,20 +211,25 @@ public class planner extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sidePanel.setBackground(new java.awt.Color(17, 45, 57));
+        sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("الحجاوي");
+        sidePanel.add(jLabel1);
+        jLabel1.setBounds(0, 54, 234, 37);
 
-        jLabel2.setBackground(new java.awt.Color(17, 45, 57));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("اسم المستخدم");
+        sidePanel.add(jLabel2);
+        jLabel2.setBounds(0, 131, 234, 32);
 
-        ToolSearch.setBackground(new java.awt.Color(17, 45, 57));
+        ToolSearch.setBackground(new java.awt.Color(255, 255, 255));
         ToolSearch.setForeground(new java.awt.Color(255, 255, 255));
         ToolSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -232,7 +238,7 @@ public class planner extends javax.swing.JFrame {
         });
         ToolSearch.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        endtool.setBackground(new java.awt.Color(204, 204, 204));
+        endtool.setBackground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout endtoolLayout = new javax.swing.GroupLayout(endtool);
         endtool.setLayout(endtoolLayout);
@@ -248,12 +254,15 @@ public class planner extends javax.swing.JFrame {
         ToolSearch.add(endtool, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 20, 50));
 
         jLabel3.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(17, 45, 57));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("البحث عن أداه");
         ToolSearch.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 80, -1));
 
-        AddReq.setBackground(new java.awt.Color(17, 45, 57));
+        sidePanel.add(ToolSearch);
+        ToolSearch.setBounds(24, 269, 210, 46);
+
+        AddReq.setBackground(new java.awt.Color(255, 255, 255));
         AddReq.setForeground(new java.awt.Color(255, 255, 255));
         AddReq.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -262,7 +271,7 @@ public class planner extends javax.swing.JFrame {
         });
         AddReq.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        endReq.setBackground(new java.awt.Color(204, 204, 204));
+        endReq.setBackground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout endReqLayout = new javax.swing.GroupLayout(endReq);
         endReq.setLayout(endReqLayout);
@@ -278,12 +287,15 @@ public class planner extends javax.swing.JFrame {
         AddReq.add(endReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 20, 50));
 
         jLabel4.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(17, 45, 57));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("الطلبيات");
         AddReq.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, -1));
 
-        AddWorker.setBackground(new java.awt.Color(17, 45, 57));
+        sidePanel.add(AddReq);
+        AddReq.setBounds(24, 333, 210, 46);
+
+        AddWorker.setBackground(new java.awt.Color(255, 255, 255));
         AddWorker.setForeground(new java.awt.Color(255, 255, 255));
         AddWorker.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -292,7 +304,7 @@ public class planner extends javax.swing.JFrame {
         });
         AddWorker.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        endWorker1.setBackground(new java.awt.Color(204, 204, 204));
+        endWorker1.setBackground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout endWorker1Layout = new javax.swing.GroupLayout(endWorker1);
         endWorker1.setLayout(endWorker1Layout);
@@ -307,15 +319,19 @@ public class planner extends javax.swing.JFrame {
 
         AddWorker.add(endWorker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 20, 50));
 
+        jLabel5.setBackground(new java.awt.Color(17, 45, 57));
         jLabel5.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(17, 45, 57));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("اضافة عامل");
         AddWorker.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, -1));
 
+        sidePanel.add(AddWorker);
+        AddWorker.setBounds(24, 205, 210, 46);
+
         signOut.setBackground(new java.awt.Color(17, 45, 57));
-        signOut.setFont(new java.awt.Font("Traditional Arabic", 3, 13)); // NOI18N
-        signOut.setForeground(new java.awt.Color(255, 51, 51));
+        signOut.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        signOut.setForeground(new java.awt.Color(17, 45, 57));
         signOut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         signOut.setText("تسجيل الخروج");
         signOut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -323,38 +339,12 @@ public class planner extends javax.swing.JFrame {
                 signOutMousePressed(evt);
             }
         });
+        sidePanel.add(signOut);
+        signOut.setBounds(0, 460, 234, 35);
 
-        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
-        sidePanel.setLayout(sidePanelLayout);
-        sidePanelLayout.setHorizontalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(signOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidePanelLayout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
-                .addGroup(sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ToolSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddReq, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddWorker, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        sidePanelLayout.setVerticalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(AddWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ToolSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AddReq, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(signOut, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/im5.jpg"))); // NOI18N
+        sidePanel.add(jLabel34);
+        jLabel34.setBounds(0, 480, 230, 130);
 
         screenCard.setLayout(new java.awt.CardLayout());
 
@@ -723,9 +713,10 @@ public class planner extends javax.swing.JFrame {
 
         screenCard.add(searchToolCard, "card3");
 
+        orders.setBackground(new java.awt.Color(255, 255, 255));
         orders.setPreferredSize(new java.awt.Dimension(700, 597));
 
-        toppanelOrders.setBackground(new java.awt.Color(17, 44, 56));
+        toppanelOrders.setBackground(new java.awt.Color(204, 204, 204));
 
         ToolSearch1.setBackground(new java.awt.Color(17, 45, 57));
         ToolSearch1.setForeground(new java.awt.Color(255, 255, 255));
@@ -745,7 +736,7 @@ public class planner extends javax.swing.JFrame {
         });
         AddReq1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        orderLists.setBackground(new java.awt.Color(17, 44, 56));
+        orderLists.setBackground(new java.awt.Color(204, 204, 204));
         orderLists.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 orderListsMousePressed(evt);
@@ -753,7 +744,7 @@ public class planner extends javax.swing.JFrame {
         });
 
         ListOrder.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        ListOrder.setForeground(new java.awt.Color(255, 255, 255));
+        ListOrder.setForeground(new java.awt.Color(204, 0, 0));
         ListOrder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ListOrder.setText("لائحة الطلبات");
 
@@ -771,15 +762,16 @@ public class planner extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        Search_Delete.setBackground(new java.awt.Color(17, 44, 56));
+        Search_Delete.setBackground(new java.awt.Color(204, 204, 204));
         Search_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 Search_DeleteMousePressed(evt);
             }
         });
 
+        jLabel36.setBackground(new java.awt.Color(204, 0, 0));
         jLabel36.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setForeground(new java.awt.Color(204, 0, 0));
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setText("بحث و حذف");
 
@@ -795,11 +787,11 @@ public class planner extends javax.swing.JFrame {
             Search_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Search_DeleteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel36)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
 
-        newOrder.setBackground(new java.awt.Color(17, 44, 56));
+        newOrder.setBackground(new java.awt.Color(204, 204, 204));
         newOrder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 newOrderMousePressed(evt);
@@ -807,7 +799,7 @@ public class planner extends javax.swing.JFrame {
         });
 
         jLabel35.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setForeground(new java.awt.Color(204, 0, 0));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("اضافة طلبية");
 
@@ -825,7 +817,7 @@ public class planner extends javax.swing.JFrame {
             .addGroup(newOrderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel35)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout toppanelOrdersLayout = new javax.swing.GroupLayout(toppanelOrders);
@@ -850,19 +842,29 @@ public class planner extends javax.swing.JFrame {
             toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(toppanelOrdersLayout.createSequentialGroup()
                 .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Search_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addComponent(ToolSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                    .addGroup(toppanelOrdersLayout.createSequentialGroup()
+                        .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(toppanelOrdersLayout.createSequentialGroup()
+                                .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(newOrder, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Search_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(44, 44, 44)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelOrdersLayout.createSequentialGroup()
+                        .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)))
                 .addComponent(AddReq1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         orderCards.setLayout(new java.awt.CardLayout());
 
+        ListsCard.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel6.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(17, 45, 57));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("لائحة الطلبيات ");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
@@ -883,7 +885,7 @@ public class planner extends javax.swing.JFrame {
         ListsCardLayout.setHorizontalGroup(
             ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListsCardLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(44, Short.MAX_VALUE)
                 .addGroup(ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -892,11 +894,10 @@ public class planner extends javax.swing.JFrame {
         ListsCardLayout.setVerticalGroup(
             ListsCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListsCardLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         orderCards.add(ListsCard, "card4");
@@ -1056,7 +1057,7 @@ public class planner extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(0, 37, Short.MAX_VALUE)
+                        .addGap(0, 44, Short.MAX_VALUE)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1348,8 +1349,8 @@ public class planner extends javax.swing.JFrame {
         ordersLayout.setVerticalGroup(
             ordersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ordersLayout.createSequentialGroup()
-                .addComponent(toppanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(toppanelOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 59, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(orderCards, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1360,14 +1361,14 @@ public class planner extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(screenCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(screenCard, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(screenCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(screenCard, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
         );
 
         pack();
@@ -1872,6 +1873,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;

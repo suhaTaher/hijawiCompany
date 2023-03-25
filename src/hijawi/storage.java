@@ -28,9 +28,9 @@ public class storage extends javax.swing.JFrame {
         initComponents();
          cardLayout = (CardLayout) cards.getLayout();
          
-         LOGIN login=new LOGIN(); 
+        /* LOGIN login=new LOGIN(); 
           this.setVisible(false);
-         login.setVisible(true);
+         login.setVisible(true);*/
          
          String tooltype=(String) this.Tool.getSelectedItem();
         String supplier=(String) this.jComboBox1.getSelectedItem();
@@ -896,6 +896,7 @@ public class storage extends javax.swing.JFrame {
 
     private void doneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_doneActionPerformed
 
     private void ToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToolActionPerformed
