@@ -46,17 +46,23 @@ public class searchforsales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        searchKey = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        AreaNo = new javax.swing.JTextField();
         aisle = new javax.swing.JTextField();
-        shelf1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         sector = new javax.swing.JTextField();
+        CarierNo = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         Tool_name = new javax.swing.JTextField();
@@ -74,18 +80,42 @@ public class searchforsales extends javax.swing.JFrame {
         Colors = new javax.swing.JList<>();
         lable = new javax.swing.JLabel();
         Status = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        searchKey = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setSize(new java.awt.Dimension(650, 650));
 
-        jLabel1.setText("اسم المستخدم");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(670, 13, 119, 33);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("بحث عن اداة");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 102, 38));
+
+        searchKey.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchKeyActionPerformed(evt);
+            }
+        });
+        jPanel4.add(searchKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 290, 40));
+
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 0, 0));
+        jButton1.setText("بحث");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 0, 100, 40));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(null);
@@ -97,6 +127,15 @@ public class searchforsales extends javax.swing.JFrame {
         jLabel15.setText("موقع التخزين");
         jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 74, 26));
 
+        AreaNo.setEditable(false);
+        AreaNo.setBackground(new java.awt.Color(255, 255, 255));
+        AreaNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AreaNoActionPerformed(evt);
+            }
+        });
+        jPanel8.add(AreaNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
+
         aisle.setEditable(false);
         aisle.setBackground(new java.awt.Color(255, 255, 255));
         aisle.addActionListener(new java.awt.event.ActionListener() {
@@ -104,27 +143,20 @@ public class searchforsales extends javax.swing.JFrame {
                 aisleActionPerformed(evt);
             }
         });
-        jPanel8.add(aisle, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
-
-        shelf1.setEditable(false);
-        shelf1.setBackground(new java.awt.Color(255, 255, 255));
-        shelf1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shelf1ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(shelf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 40));
+        jPanel8.add(aisle, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 40));
 
         jLabel13.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel13.setText("الرف");
-        jPanel8.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 40));
+        jLabel13.setText("رقم المنطقة");
+        jPanel8.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 70, 40));
 
         jLabel21.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel21.setText("الممر");
-        jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 50, 40));
+        jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 50, 40));
 
-        jPanel5.add(jPanel8);
-        jPanel8.setBounds(103, 154, 662, 90);
+        jLabel2.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("رقم الحاملة ");
+        jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 80, 30));
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -142,8 +174,17 @@ public class searchforsales extends javax.swing.JFrame {
         });
         jPanel9.add(sector, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
 
-        jPanel5.add(jPanel9);
-        jPanel9.setBounds(531, 107, 234, 40);
+        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, -1, 40));
+
+        CarierNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarierNoActionPerformed(evt);
+            }
+        });
+        jPanel8.add(CarierNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 150, 40));
+
+        jPanel5.add(jPanel8);
+        jPanel8.setBounds(100, 110, 662, 150);
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -226,7 +267,7 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 150, 120));
 
         jPanel5.add(jPanel6);
-        jPanel6.setBounds(220, 262, 545, 120);
+        jPanel6.setBounds(220, 270, 545, 120);
 
         lable.setForeground(new java.awt.Color(255, 0, 0));
         lable.setText("statusOF the tool");
@@ -242,50 +283,46 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel5.add(Status);
         Status.setBounds(121, 389, 97, 43);
 
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(12, 120, 790, 440);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("بحث عن اداة");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 102, 38));
-
-        searchKey.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchKeyActionPerformed(evt);
-            }
-        });
-        jPanel4.add(searchKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 290, 40));
-
-        jButton1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jButton1.setText("بحث");
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
-            }
-        });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 0, 80, 40));
-
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(129, 73, 541, 40);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("اسم المستخدم");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 800, 580);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,13 +334,13 @@ public class searchforsales extends javax.swing.JFrame {
  
     }//GEN-LAST:event_searchKeyActionPerformed
 
+    private void AreaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AreaNoActionPerformed
+
     private void aisleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aisleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aisleActionPerformed
-
-    private void shelf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shelf1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_shelf1ActionPerformed
 
     private void sectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sectorActionPerformed
         // TODO add your handling code here:
@@ -327,7 +364,12 @@ public class searchforsales extends javax.swing.JFrame {
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
         // TODO add your handling code here:
-        String TypeOfTool1="";
+
+    }//GEN-LAST:event_jButton1KeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+                String TypeOfTool1="";
        String size1="";
        String JobOfTool1="";
        String supplier1="";
@@ -480,11 +522,15 @@ this.Tool_name.setText(TypeOfTool1);
 this.Supplier.setText(supplier1);
 this.Tool_size.setText(size1);
 this.sector.setText(JobOfTool1);
-this.aisle.setText(Integer.toString(isle));
-this.shelf1.setText(Integer.toString(shelf));
+this.AreaNo.setText(Integer.toString(isle));
+this.aisle.setText(Integer.toString(shelf));
 this.Status.setText(status1);
 this.colorNo.setText(Integer.toString(colornumber1));
-    }//GEN-LAST:event_jButton1KeyPressed
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CarierNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarierNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CarierNoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -522,6 +568,8 @@ this.colorNo.setText(Integer.toString(colornumber1));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AreaNo;
+    private javax.swing.JTextField CarierNo;
     private javax.swing.JList<String> Colors;
     private javax.swing.JTextField Status;
     private javax.swing.JTextField Supplier;
@@ -538,6 +586,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
@@ -554,6 +603,5 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel lable;
     private javax.swing.JTextField searchKey;
     private javax.swing.JTextField sector;
-    private javax.swing.JTextField shelf1;
     // End of variables declaration//GEN-END:variables
 }
