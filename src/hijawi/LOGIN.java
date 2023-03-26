@@ -322,7 +322,7 @@ public class LOGIN extends javax.swing.JFrame {
         }
         //</editor-fold>
         /* Create and display the form */
-        UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+        //UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
         //UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
         //UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AcrylLookAndFeel");
        

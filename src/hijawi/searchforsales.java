@@ -24,159 +24,18 @@ public class searchforsales extends javax.swing.JFrame {
     /**
      * Creates new form searchforsales
      */
+    
+    
+     
+        Connection connection;
+        PreparedStatement ps,ps1,ps2;  
+        
+
+       
     public searchforsales() {
         initComponents();
-   
-    
-       String TypeOfTool1="";
-       String size1="";
-       String JobOfTool1="";
-       String supplier1="";
-       String status1="";
-       int status;
-       int size=0;
-       int flag=0;
-       int isle=0;
-       int shelf=0;
-       int ordernumber1=0;
-       int colornumber1=0;
-        
-        String search=this.searchKey.getText();
-        char TypeOfTool=search.charAt(0);
-        Connection connection;
-        PreparedStatement ps,ps1,ps2;    
-       
-        switch (TypeOfTool) {
-            case 'D':
-                try {
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps = connection.prepareStatement("select * from dicut where name= ?");
-                    ps.setString(1,search );
-                    ResultSet rs = ps.executeQuery();
-                    if(rs.next())
-                    {
-                        TypeOfTool1=rs.getString(2);
-                        JobOfTool1=rs.getString(3);
-                        size=rs.getInt(4);
-                        status=rs.getInt(5);
-                        supplier1=rs.getString(8);
-                        isle=rs.getInt(9);
-                        shelf=rs.getInt(10);
-                        ordernumber1=rs.getInt(11);
-                        if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break; 
-            case 'P':
-                try{
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps1 = connection.prepareStatement("select * from iplate where name= ?");
-                    ps1.setString(1,search );
-                    ResultSet rs1 = ps1.executeQuery();
-                    if(rs1.next())
-                    {
-                        TypeOfTool1=rs1.getString(2);
-                        JobOfTool1=rs1.getString(3);
-                        size=rs1.getInt(4);
-                        status=rs1.getInt(5);
-                        flag=rs1.getInt(6);
-                        isle=rs1.getInt(8);
-                        shelf=rs1.getInt(9);
-                        ordernumber1=rs1.getInt(10);
-                        colornumber1=rs1.getInt(11);
-                  
-                          if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break;
-            case 'C':
-                try{
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps1 = connection.prepareStatement("select * from iclasheh where name= ?");
-                    ps1.setString(1,search );
-                    ResultSet rs1 = ps1.executeQuery();
-                    if(rs1.next())
-                    {
-                        TypeOfTool1=rs1.getString(2);
-                        JobOfTool1=rs1.getString(3);
-                        size=rs1.getInt(4);
-                        status=rs1.getInt(5);
-                        isle=rs1.getInt(8);
-                        shelf=rs1.getInt(9);
-                        ordernumber1=rs1.getInt(10);
-                        if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break;
-            default:
-                JOptionPane.showMessageDialog(this,"Not Found" );
-                break;
-        }
-        
-this.Tool_name.setText(TypeOfTool1);
-this.Supplier.setText(supplier1);
-this.Tool_size.setText(size1);
-this.sector.setText(JobOfTool1);
-this.aisle.setText(Integer.toString(isle));
-this.shelf.setText(Integer.toString(shelf));
-this.Status.setText(status1);
-this.colorNo.setText(Integer.toString(colornumber1));  }
-    
+ 
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -192,7 +51,7 @@ this.colorNo.setText(Integer.toString(colornumber1));  }
         jPanel8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         aisle = new javax.swing.JTextField();
-        shelf = new javax.swing.JTextField();
+        shelf1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -247,14 +106,14 @@ this.colorNo.setText(Integer.toString(colornumber1));  }
         });
         jPanel8.add(aisle, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 150, 40));
 
-        shelf.setEditable(false);
-        shelf.setBackground(new java.awt.Color(255, 255, 255));
-        shelf.addActionListener(new java.awt.event.ActionListener() {
+        shelf1.setEditable(false);
+        shelf1.setBackground(new java.awt.Color(255, 255, 255));
+        shelf1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shelfActionPerformed(evt);
+                shelf1ActionPerformed(evt);
             }
         });
-        jPanel8.add(shelf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 40));
+        jPanel8.add(shelf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 150, 40));
 
         jLabel13.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel13.setText("الرف");
@@ -433,15 +292,18 @@ this.colorNo.setText(Integer.toString(colornumber1));  }
 
     private void searchKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchKeyActionPerformed
         // TODO add your handling code here:
+        
+  
+ 
     }//GEN-LAST:event_searchKeyActionPerformed
 
     private void aisleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aisleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aisleActionPerformed
 
-    private void shelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shelfActionPerformed
+    private void shelf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shelf1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_shelfActionPerformed
+    }//GEN-LAST:event_shelf1ActionPerformed
 
     private void sectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sectorActionPerformed
         // TODO add your handling code here:
@@ -619,7 +481,7 @@ this.Supplier.setText(supplier1);
 this.Tool_size.setText(size1);
 this.sector.setText(JobOfTool1);
 this.aisle.setText(Integer.toString(isle));
-this.shelf.setText(Integer.toString(shelf));
+this.shelf1.setText(Integer.toString(shelf));
 this.Status.setText(status1);
 this.colorNo.setText(Integer.toString(colornumber1));
     }//GEN-LAST:event_jButton1KeyPressed
@@ -692,6 +554,6 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel lable;
     private javax.swing.JTextField searchKey;
     private javax.swing.JTextField sector;
-    private javax.swing.JTextField shelf;
+    private javax.swing.JTextField shelf1;
     // End of variables declaration//GEN-END:variables
 }
