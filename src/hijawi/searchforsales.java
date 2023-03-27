@@ -292,7 +292,7 @@ public class searchforsales extends javax.swing.JFrame {
         lable.setForeground(new java.awt.Color(255, 0, 0));
         lable.setText("statusOF the tool");
         jPanel5.add(lable);
-        lable.setBounds(0, 340, 116, 43);
+        lable.setBounds(0, 260, 116, 43);
 
         Status.setEditable(false);
         Status.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +301,7 @@ public class searchforsales extends javax.swing.JFrame {
             }
         });
         jPanel5.add(Status);
-        Status.setBounds(120, 340, 97, 43);
+        Status.setBounds(120, 260, 97, 43);
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -330,7 +330,7 @@ public class searchforsales extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
