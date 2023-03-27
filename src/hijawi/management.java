@@ -107,7 +107,7 @@ public class management extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         ID = new javax.swing.JTextField();
-        jPanel20 = new javax.swing.JPanel();
+        DeleteWorkerBtn = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         SearchforTools = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -149,6 +149,8 @@ public class management extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ordersList = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -326,13 +328,13 @@ public class management extends javax.swing.JFrame {
                 name1ActionPerformed(evt);
             }
         });
-        namepanel.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 191, 35));
+        namepanel.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 191, 35));
 
         jLabel20.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(51, 51, 51));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("الايميل ");
-        namepanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 70, 35));
+        jLabel20.setText("البريد الالكتروني");
+        namepanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 80, 35));
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -349,7 +351,7 @@ public class management extends javax.swing.JFrame {
                 workerIDActionPerformed(evt);
             }
         });
-        jPanel14.add(workerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 180, 35));
+        jPanel14.add(workerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 35));
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -358,7 +360,7 @@ public class management extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(51, 51, 51));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("كلمة لسر ");
-        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 60, -1));
+        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 60, -1));
 
         WorkerPassWord.setEditable(false);
         WorkerPassWord.addActionListener(new java.awt.event.ActionListener() {
@@ -366,7 +368,7 @@ public class management extends javax.swing.JFrame {
                 WorkerPassWordActionPerformed(evt);
             }
         });
-        jPanel15.add(WorkerPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 180, 35));
+        jPanel15.add(WorkerPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, 35));
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -537,6 +539,7 @@ public class management extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("الاسم");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -613,9 +616,9 @@ public class management extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
@@ -631,10 +634,10 @@ public class management extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("حذف موظف ");
 
-        jPanel20.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel20.addMouseListener(new java.awt.event.MouseAdapter() {
+        DeleteWorkerBtn.setBackground(new java.awt.Color(51, 51, 51));
+        DeleteWorkerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel20MousePressed(evt);
+                DeleteWorkerBtnMousePressed(evt);
             }
         });
 
@@ -643,17 +646,17 @@ public class management extends javax.swing.JFrame {
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("موافق");
 
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
+        javax.swing.GroupLayout DeleteWorkerBtnLayout = new javax.swing.GroupLayout(DeleteWorkerBtn);
+        DeleteWorkerBtn.setLayout(DeleteWorkerBtnLayout);
+        DeleteWorkerBtnLayout.setHorizontalGroup(
+            DeleteWorkerBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DeleteWorkerBtnLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DeleteWorkerBtnLayout.setVerticalGroup(
+            DeleteWorkerBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
@@ -663,25 +666,21 @@ public class management extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(46, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteWorkerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DeleteWorkerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
@@ -982,17 +981,34 @@ public class management extends javax.swing.JFrame {
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
 
+        ordersList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(ordersList);
+
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
-                .addGap(0, 634, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ListsCardLayout = new javax.swing.GroupLayout(ListsCard);
@@ -1030,7 +1046,7 @@ public class management extends javax.swing.JFrame {
             .addGroup(DisplayOrdersLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(ListsCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cards.add(DisplayOrders, "card2");
@@ -1148,8 +1164,13 @@ public class management extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_WorkerPassWordActionPerformed
 
-    private void jPanel20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel20MousePressed
+    private void DeleteWorkerBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteWorkerBtnMousePressed
         // TODO add your handling code here:
+                         if(ID.getText().isEmpty()){
+                 JOptionPane.showMessageDialog(this,"what is the user id" );
+               }
+                         else{
+        
                 int workerid=Integer.parseInt(this.ID.getText());
         Connection connection;
         PreparedStatement ps,p;
@@ -1167,7 +1188,8 @@ public class management extends javax.swing.JFrame {
         catch (HeadlessException | SQLException ex ) {
             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
         }
-    }//GEN-LAST:event_jPanel20MousePressed
+                         }
+    }//GEN-LAST:event_DeleteWorkerBtnMousePressed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
@@ -1175,7 +1197,12 @@ public class management extends javax.swing.JFrame {
 
     private void searchWorkerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchWorkerMousePressed
         // TODO add your handling code here:
-                int workerid=Integer.parseInt(this.empNo.getText());
+                
+                    if(empNo.getText().isEmpty()){
+                 JOptionPane.showMessageDialog(this,"what is the user id" );
+               }
+                    else{
+                        int workerid=Integer.parseInt(this.empNo.getText());
             Connection connection;
         PreparedStatement ps,p;
         try{
@@ -1199,17 +1226,26 @@ public class management extends javax.swing.JFrame {
      catch (HeadlessException | SQLException ex ) {
             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
         }
+                    }
     }//GEN-LAST:event_searchWorkerMousePressed
 
     private void addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMousePressed
         // TODO add your handling code here:
-        
-      String workername=this.name2.getText();
-        String email=this.name1.getText();
+
+         String email=this.name1.getText();
+         String workername=this.name2.getText();
+          if(workername.isEmpty() || email.isEmpty()){
+                 JOptionPane.showMessageDialog(this,"Empty username or email" );
+               }
+          
+          else{
+      
+       
         String type=(String) this.workertype.getSelectedItem();
         Connection connection;
         PreparedStatement ps,p;
         try {
+            
             final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             SecureRandom random = new SecureRandom();
             StringBuilder sb = new StringBuilder();
@@ -1234,8 +1270,12 @@ public class management extends javax.swing.JFrame {
                 p.setString(1,workername);
                 ResultSet s = p.executeQuery();
                 if(s.next()){
+                    
                     int id=s.getInt(5);
+                     workerID.setText(Integer.toString(id));
+                    WorkerPassWord.setText(password);
                     JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n id="+id+"\n password="+password);
+                  
                 }
             }
             else
@@ -1247,167 +1287,12 @@ public class management extends javax.swing.JFrame {
         } catch (HeadlessException | SQLException ex ) {
             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
         }
+          }
     }//GEN-LAST:event_addMousePressed
 
     private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
-               String TypeOfTool1="";
-       String size1="";
-       String JobOfTool1="";
-       String supplier1="";
-       String status1="";
-       int status;
-       int size=0;
-       int flag=0;
-       int isle=0;
-       int shelf=0;
-       int ordernumber1=0;
-       int colornumber1=0;
-        
-        String search=this.searchKey.getText();
-        char TypeOfTool=search.charAt(0);
-        Connection connection;
-        PreparedStatement ps,ps1,ps2;    
-       
-        switch (TypeOfTool) {
-            case 'D':
-                try {
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps = connection.prepareStatement("select * from dicut where name= ?");
-                    ps.setString(1,search );
-                    ResultSet rs = ps.executeQuery();
-                    if(rs.next())
-                    {
-                        TypeOfTool1=rs.getString(2);
-                        JobOfTool1=rs.getString(3);
-                        size=rs.getInt(4);
-                        status=rs.getInt(5);
-                        supplier1=rs.getString(8);
-                        isle=rs.getInt(9);
-                        shelf=rs.getInt(10);
-                        ordernumber1=rs.getInt(11);
-                        if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break; 
-            case 'P':
-                try{
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps1 = connection.prepareStatement("select * from iplate where name= ?");
-                    ps1.setString(1,search );
-                    ResultSet rs1 = ps1.executeQuery();
-                    if(rs1.next())
-                    {
-                        Vector data = new Vector();
-                         ps2 = connection.prepareStatement("select * from color where platename= ?");
-                         ps2.setString(1,search );
-                         ResultSet rs2 = ps2.executeQuery();
-                         while(rs2.next()){
-                             
-                            data.addElement(rs2.getString(2));
-                         }
-                             this.Colors.setListData(data);
-                        TypeOfTool1=rs1.getString(2);
-                        JobOfTool1=rs1.getString(3);
-                        size=rs1.getInt(4);
-                        status=rs1.getInt(5);
-                        flag=rs1.getInt(6);
-                        isle=rs1.getInt(8);
-                        shelf=rs1.getInt(9);
-                        ordernumber1=rs1.getInt(10);
-                        colornumber1=rs1.getInt(11);
-                  
-                          if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break;
-            case 'C':
-                try{
-                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                    ps1 = connection.prepareStatement("select * from iclasheh where name= ?");
-                    ps1.setString(1,search );
-                    ResultSet rs1 = ps1.executeQuery();
-                    if(rs1.next())
-                    {
-                        TypeOfTool1=rs1.getString(2);
-                        JobOfTool1=rs1.getString(3);
-                        size=rs1.getInt(4);
-                        status=rs1.getInt(5);
-                        isle=rs1.getInt(8);
-                        shelf=rs1.getInt(9);
-                        ordernumber1=rs1.getInt(10);
-                        if(status==1)status1="متوفر";
-                        if(status==0) status1="غير متوفر";
-                        switch (size) {
-                            case 1:
-                                size1="30*20";
-                                break;
-                            case 2:
-                                size1="50*60";
-                                break;
-                            case 3:
-                                size1="70*60";
-                                break;
-                            default:
-                                break;
-                        }
-                        
-                    }
-                    else  JOptionPane.showMessageDialog(this,"Not Found" );
-                }
-                catch (HeadlessException | SQLException ex ) {
-                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-                }       break;
-            default:
-                JOptionPane.showMessageDialog(this,"Not Found" );
-                break;
-        }
-        
-this.Tool_name.setText(TypeOfTool1);
-this.Supplier.setText(supplier1);
-this.Tool_size.setText(size1);
-this.sector.setText(JobOfTool1);
-this.aisle.setText(Integer.toString(isle));
-this.CarierMo.setText(Integer.toString(shelf));
-this.Status.setText(status1);
-this.colorNo.setText(Integer.toString(colornumber1));
+
     }//GEN-LAST:event_searchMousePressed
 
     /**
@@ -1449,6 +1334,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JTextField Area;
     private javax.swing.JTextField CarierMo;
     private javax.swing.JList<String> Colors;
+    private javax.swing.JPanel DeleteWorkerBtn;
     private javax.swing.JPanel DisplayOrders;
     private javax.swing.JTextField ID;
     private javax.swing.JPanel ListsCard;
@@ -1512,7 +1398,6 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
@@ -1523,6 +1408,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lable;
     private javax.swing.JTextField name;
     private javax.swing.JTextField name1;
@@ -1530,6 +1416,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel namepanel;
     private javax.swing.JPanel namepanel1;
     private javax.swing.JPanel orders;
+    private javax.swing.JTable ordersList;
     private javax.swing.JPanel search;
     private javax.swing.JTextField searchKey;
     private javax.swing.JPanel searchWorker;

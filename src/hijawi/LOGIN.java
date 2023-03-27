@@ -283,6 +283,12 @@ public class LOGIN extends javax.swing.JFrame {
                  this.setVisible(false);
                      s.setVisible(true);
                  }
+                 else  if(type.equals("الادارة"))
+                   {
+                    searchforsales s=new searchforsales(); 
+                 this.setVisible(false);
+                     s.setVisible(true);
+                 }
                  
              }
              else 

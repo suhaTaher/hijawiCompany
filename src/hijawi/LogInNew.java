@@ -229,13 +229,23 @@ public class LogInNew extends javax.swing.JFrame {
 
     private void LogInButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInButton1MouseClicked
         // TODO add your handling code here:
-                        int id=Integer.parseInt(UserName3.getText());
+        
+               
                String password=new String(Password1.getPassword());
 
- Connection connection;
+
+                       
+        Connection connection;
         PreparedStatement ps;  
- 
+        
+            if(UserName3.getText().isEmpty() || password.isEmpty()){
+                 JOptionPane.showMessageDialog(this,"Empty Passwoord or email" );
+                
+               }
+            
+            else{
            try {
+               int id=Integer.parseInt(UserName3.getText());
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
             ps = connection.prepareStatement("select * from user where id = ? AND password = ?");
             ps.setInt(1, id );
@@ -262,6 +272,12 @@ public class LogInNew extends javax.swing.JFrame {
                  this.setVisible(false);
                      s.setVisible(true);
                  }
+                 else  if(type.equals("الادارة"))
+                   {
+                    management s=new management(); 
+                 this.setVisible(false);
+                     s.setVisible(true);
+                 }
                  
              }
              else 
@@ -272,6 +288,7 @@ public class LogInNew extends javax.swing.JFrame {
         } catch (Exception ex ) {
             JOptionPane.showMessageDialog(this,"Wrong Email and/or Password \n"+ex );
         } 
+                       }
     }//GEN-LAST:event_LogInButton1MouseClicked
 
     /**

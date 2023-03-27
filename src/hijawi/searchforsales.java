@@ -292,7 +292,7 @@ public class searchforsales extends javax.swing.JFrame {
         lable.setForeground(new java.awt.Color(255, 0, 0));
         lable.setText("statusOF the tool");
         jPanel5.add(lable);
-        lable.setBounds(0, 260, 116, 43);
+        lable.setBounds(0, 389, 116, 43);
 
         Status.setEditable(false);
         Status.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +301,7 @@ public class searchforsales extends javax.swing.JFrame {
             }
         });
         jPanel5.add(Status);
-        Status.setBounds(120, 260, 97, 43);
+        Status.setBounds(121, 389, 97, 43);
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));

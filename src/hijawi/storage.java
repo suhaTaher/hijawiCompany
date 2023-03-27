@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 /**
  *
  * @author ASUS
@@ -302,12 +304,12 @@ public class storage extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         suplier = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        ColorNo = new javax.swing.JTextField();
+        colornomber = new javax.swing.JTextField();
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        OK = new javax.swing.JButton();
         jComboBox3 = new javax.swing.JComboBox<>();
         OrderListpanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -866,7 +868,7 @@ public class storage extends javax.swing.JFrame {
         jLabel27.setText("نوع الاداة");
         jPanel24.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
 
-        Tool1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Tool1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dicut", "IClasheh", "IPlate" }));
         Tool1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tool1ActionPerformed(evt);
@@ -881,7 +883,7 @@ public class storage extends javax.swing.JFrame {
         jLabel33.setText("الحجم");
         jPanel31.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
 
-        Size2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Size2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "70*100", "50*30", "غير ذلك" }));
         jPanel31.add(Size2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
 
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -949,7 +951,7 @@ public class storage extends javax.swing.JFrame {
         jLabel40.setText("المورد");
         jPanel35.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 74, 26));
 
-        suplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        suplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nablus", "Ramallah" }));
         suplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suplierActionPerformed(evt);
@@ -959,11 +961,10 @@ public class storage extends javax.swing.JFrame {
 
         jLabel8.setText("عدد الألوان");
 
-        ColorNo.setEditable(false);
-        ColorNo.setBackground(new java.awt.Color(255, 255, 255));
-        ColorNo.addActionListener(new java.awt.event.ActionListener() {
+        colornomber.setBackground(new java.awt.Color(255, 255, 255));
+        colornomber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColorNoActionPerformed(evt);
+                colornomberActionPerformed(evt);
             }
         });
 
@@ -984,7 +985,13 @@ public class storage extends javax.swing.JFrame {
         jCheckBox8.setText("أحمر");
         jCheckBox8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton1.setText("موافق");
+        OK.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        OK.setText("موافق");
+        OK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OKActionPerformed(evt);
+            }
+        });
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "اضافة", "تعديل" }));
 
@@ -1013,8 +1020,8 @@ public class storage extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddAndUpdateLayout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(OK, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox5)
@@ -1022,7 +1029,7 @@ public class storage extends javax.swing.JFrame {
                     .addComponent(jCheckBox7)
                     .addComponent(jCheckBox8))
                 .addGap(66, 66, 66)
-                .addComponent(ColorNo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(colornomber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -1042,26 +1049,26 @@ public class storage extends javax.swing.JFrame {
                 .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ColorNo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AddAndUpdateLayout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox7)))
                 .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddAndUpdateLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddAndUpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(colornomber, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AddAndUpdateLayout.createSequentialGroup()
+                                .addComponent(jCheckBox5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox7)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox8)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddAndUpdateLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addComponent(OK)
+                        .addGap(78, 78, 78))))
         );
 
         ToolCards.add(AddAndUpdate, "card2");
@@ -1291,9 +1298,9 @@ public class storage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void ColorNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColorNoActionPerformed
+    private void colornomberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colornomberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ColorNoActionPerformed
+    }//GEN-LAST:event_colornomberActionPerformed
 
     private void shelf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shelf2ActionPerformed
         // TODO add your handling code here:
@@ -1314,6 +1321,199 @@ public class storage extends javax.swing.JFrame {
     private void aisle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aisle3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_aisle3ActionPerformed
+
+    private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> color=new ArrayList<String>();  
+        int no=0;
+        String otype=(String) this.jComboBox3.getSelectedItem();
+       if(otype=="اضافة"){
+        if(this.jCheckBox5.isSelected()){color.add("أسود");no++;}
+        if(this.jCheckBox6.isSelected()){color.add("أزرق");no++;}
+        if(this.jCheckBox7.isSelected()){color.add("أصفر");no++;}
+        if(this.jCheckBox8.isSelected()){color.add("أحمر");no++;}
+        String tooltype=(String) this.Tool1.getSelectedItem();
+        String supplier=(String) this.suplier.getSelectedItem();
+        String size=(String) this.Size2.getSelectedItem();
+        String sector=(String) this.jComboBox1.getSelectedItem();
+        StringBuilder toolname = new StringBuilder();
+        Connection connection;
+        long millis=System.currentTimeMillis();  
+        java.sql.Date date = new java.sql.Date(millis);  
+        PreparedStatement ps,ps1,ps2;
+        int size1=1;
+        int isle=0;
+        char s;
+        char jobOfTool='R';
+        int cNo=0;
+        int area=0;
+             if(size=="70×100")size1=1;
+             else if(size=="50×30")size1=2; 
+             else size1=3; 
+             
+             if("Ramallah".equals(supplier))s='R';
+             else s='N';
+              
+             if(null!=sector)switch (sector) {
+            case "مطاعم":
+                jobOfTool='R';
+                break;
+            case "الادوية":
+                jobOfTool='M';
+                break;
+            case "اخرى":
+                jobOfTool='O';
+                break;
+            case "تعليم":
+                jobOfTool='E';
+                break;
+            case "بنوك":
+                jobOfTool='B';
+                break;
+            default:
+                break;
+        }
+                if("Dicut"==tooltype){
+           try { 
+               if(size1==1)isle=1;
+               else if(size1==2)isle=2;
+               else if(size1==3 && jobOfTool=='R' ||jobOfTool=='M' )isle=3;
+               else isle=4;
+               
+               area=1;
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              ps1 = connection.prepareStatement("SELECT MAX(carierNo) AS number FROM dicut WHERE   isle=?");
+               ps1.setInt(1,isle);
+               ResultSet s1 = ps1.executeQuery();
+                if(s1.next()){
+                     cNo=s1.getInt(1)+1;
+                }
+             ps = connection.prepareStatement("INSERT INTO dicut(name,type,sector,size,area,status,DateOfAttachment,supplier,isle,carierNo) VALUES (?,?,?,?,?,?,?,?,?,?)");
+             toolname.append('D');//type
+             toolname.append(size1);//size
+             toolname.append(jobOfTool);
+             toolname.append(cNo);
+             toolname.append(s);//supplier
+
+             ps.setString(1,toolname.toString());
+             ps.setString(2,tooltype);
+             ps.setString(3,sector);
+             ps.setInt(4,size1);
+              ps.setInt(5,area);
+             ps.setInt(6,1);//status
+             ps.setDate(7,date);
+             ps.setString(8,supplier);
+             ps.setInt(9,isle);
+             ps.setInt(10,cNo);
+
+             boolean rs = ps.execute();
+             if(!rs)JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n Tool name="+toolname.toString());
+             else  JOptionPane.showMessageDialog(this, "Erorr");       
+             } catch (HeadlessException | SQLException ex ) {
+             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+             }    
+             }    
+        
+                
+                else if("IClasheh"==tooltype && !this.colornomber.getText().isEmpty() ){
+               try { 
+               int colorno=Integer.parseInt(this.colornomber.getText());
+               if(size1==1)isle=1;
+               else if(size1==2)isle=2;
+               else if(size1==3 && jobOfTool=='R' ||jobOfTool=='M' )isle=3;
+               else isle=4;
+               
+               area=3;
+               connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+               ps1 = connection.prepareStatement("SELECT MAX(carierNo) AS number FROM iclasheh  WHERE   isle=?");
+               ps1.setInt(1,isle);
+               ResultSet s1 = ps1.executeQuery();
+               if(s1.next()){
+                     cNo=s1.getInt(1)+1;
+                }
+             ps = connection.prepareStatement("INSERT INTO iclasheh(name,type,sector,size,area,status,DateOfAttachment,isle,carierNo,colornumber) VALUES (?,?,?,?,?,?,?,?,?,?)");
+             toolname.append('C');//type
+             toolname.append(size1);//size
+             toolname.append(jobOfTool);
+             toolname.append(cNo);//????????????????????????????car
+             toolname.append(colorno);
+
+             ps.setString(1,toolname.toString());
+             ps.setString(2,tooltype);
+             ps.setString(3,sector);
+             ps.setInt(4,size1);
+             ps.setInt(5,area);
+             ps.setInt(6,1);//status
+             ps.setDate(7,date);
+             ps.setInt(8,isle);
+             ps.setInt(9,cNo);//?????????????????????????????????cariire
+             ps.setInt(10,colorno);
+             boolean rs = ps.execute();
+             if(!rs)JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n Tool name="+toolname.toString());
+             else  JOptionPane.showMessageDialog(this, "Erorr");       
+             } catch (HeadlessException | SQLException ex ) {
+             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+             }    
+             }  
+                
+               else if("IPlate"==tooltype && no!=0){
+               try { 
+   
+        
+               if(size1==1 && jobOfTool=='R')isle=1;
+               else if(size1==1 && jobOfTool=='M')isle=2;
+               else if(size1==1 )isle=1;
+               
+               else if(size1==2 && jobOfTool=='B')isle=3;
+               else if(size1==3 && jobOfTool=='O')isle=4;
+               else if(size1==2)isle=3;
+               
+               area=2;
+               connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+               ps1 = connection.prepareStatement("SELECT MAX(carierNo) AS number FROM iplate  WHERE   isle=?");
+               ps1.setInt(1,isle);
+               ResultSet s1 = ps1.executeQuery();
+               if(s1.next()){
+                     cNo=s1.getInt(1)+1;
+                }
+                 toolname.append('P');//type
+             toolname.append(size1);//size
+             toolname.append(jobOfTool);
+             toolname.append(cNo);//????????????????????????????car
+             toolname.append(no);//color
+
+             
+             ps = connection.prepareStatement("INSERT INTO iplate(name,type,sector,size,area,status,DateOfAttachment,isle,carierNo,colornumber) VALUES (?,?,?,?,?,?,?,?,?,?)");
+           
+
+             ps.setString(1,toolname.toString());
+             ps.setString(2,tooltype);
+             ps.setString(3,sector);
+             ps.setInt(4,size1);
+             ps.setInt(5,area);
+             ps.setInt(6,1);//status
+             ps.setDate(7,date);
+             ps.setInt(8,isle);
+             ps.setInt(9,cNo);//?????????????????????????????????cariire
+             ps.setInt(10,no);
+             boolean rs = ps.execute();
+             if(!rs)JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n Tool name="+toolname.toString());
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+         
+              for (String color1 : color) {
+                   connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                   ps1 = connection.prepareStatement("INSERT INTO color(platename,color) VALUES (?,?)");
+                   ps1.setString(1,toolname.toString());
+                   ps1.setString(2, color1);
+                   ps1.execute();
+               }
+             } catch (HeadlessException | SQLException ex ) {
+             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+             }    
+             }
+             else  JOptionPane.showMessageDialog(this, "Erorr");    
+       }
+    }//GEN-LAST:event_OKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1354,9 +1554,9 @@ public class storage extends javax.swing.JFrame {
     private javax.swing.JPanel AddAndUpdate;
     private javax.swing.JTextField CarierNo1;
     private javax.swing.JTextField CarierNo2;
-    private javax.swing.JTextField ColorNo;
     private javax.swing.JList<String> Colors1;
     private javax.swing.JPanel ExpieredToolsPAnel;
+    private javax.swing.JButton OK;
     private javax.swing.JPanel OperationsOnTools;
     private javax.swing.JPanel OperationsOnTools1;
     private javax.swing.JPanel Opertations;
@@ -1374,13 +1574,13 @@ public class storage extends javax.swing.JFrame {
     private javax.swing.JTextField area;
     private javax.swing.JPanel cards;
     private javax.swing.JTextField colorNo1;
+    private javax.swing.JTextField colornomber;
     private javax.swing.JButton done1;
     private javax.swing.JPanel endReq;
     private javax.swing.JPanel endWorker1;
     private javax.swing.JPanel endtool;
     private javax.swing.JPanel expieredList;
     private javax.swing.JTextField isle;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox5;
