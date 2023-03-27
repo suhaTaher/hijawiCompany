@@ -50,7 +50,8 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         searchKey = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        search = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -87,6 +88,7 @@ public class searchforsales extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -101,25 +103,38 @@ public class searchforsales extends javax.swing.JFrame {
         });
         jPanel4.add(searchKey, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 290, 40));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("بحث");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        search.setBackground(new java.awt.Color(51, 51, 51));
+        search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                searchMousePressed(evt);
             }
         });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
-            }
-        });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 0, 100, 40));
+
+        jLabel3.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("بحث");
+
+        javax.swing.GroupLayout searchLayout = new javax.swing.GroupLayout(search);
+        search.setLayout(searchLayout);
+        searchLayout.setHorizontalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        searchLayout.setVerticalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(null);
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -158,6 +173,7 @@ public class searchforsales extends javax.swing.JFrame {
         jLabel2.setText("رقم الحاملة ");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 80, 30));
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -186,6 +202,7 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel5.add(jPanel8);
         jPanel8.setBounds(100, 110, 662, 150);
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -205,6 +222,7 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel5.add(jPanel7);
         jPanel7.setBounds(531, 13, 234, 40);
 
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -224,6 +242,7 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel5.add(jPanel10);
         jPanel10.setBounds(531, 60, 234, 40);
 
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
@@ -243,6 +262,7 @@ public class searchforsales extends javax.swing.JFrame {
         jPanel5.add(jPanel11);
         jPanel11.setBounds(247, 13, 234, 40);
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -272,7 +292,7 @@ public class searchforsales extends javax.swing.JFrame {
         lable.setForeground(new java.awt.Color(255, 0, 0));
         lable.setText("statusOF the tool");
         jPanel5.add(lable);
-        lable.setBounds(0, 389, 116, 43);
+        lable.setBounds(0, 340, 116, 43);
 
         Status.setEditable(false);
         Status.addActionListener(new java.awt.event.ActionListener() {
@@ -281,8 +301,11 @@ public class searchforsales extends javax.swing.JFrame {
             }
         });
         jPanel5.add(Status);
-        Status.setBounds(121, 389, 97, 43);
+        Status.setBounds(120, 340, 97, 43);
 
+        jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("اسم المستخدم");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -362,14 +385,13 @@ public class searchforsales extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_StatusActionPerformed
 
-    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+    private void CarierNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarierNoActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_CarierNoActionPerformed
 
-    }//GEN-LAST:event_jButton1KeyPressed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
         // TODO add your handling code here:
-                String TypeOfTool1="";
+          String TypeOfTool1="";
        String size1="";
        String JobOfTool1="";
        String supplier1="";
@@ -526,11 +548,7 @@ this.AreaNo.setText(Integer.toString(isle));
 this.aisle.setText(Integer.toString(shelf));
 this.Status.setText(status1);
 this.colorNo.setText(Integer.toString(colornumber1));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void CarierNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarierNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CarierNoActionPerformed
+    }//GEN-LAST:event_searchMousePressed
 
     /**
      * @param args the command line arguments
@@ -577,7 +595,6 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JTextField Tool_size;
     private javax.swing.JTextField aisle;
     private javax.swing.JTextField colorNo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -588,6 +605,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -601,6 +619,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lable;
+    private javax.swing.JPanel search;
     private javax.swing.JTextField searchKey;
     private javax.swing.JTextField sector;
     // End of variables declaration//GEN-END:variables

@@ -215,6 +215,7 @@ public class planner extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(930, 610));
 
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(153, 153, 153)));
         sidePanel.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Traditional Arabic", 3, 36)); // NOI18N
@@ -1228,6 +1229,7 @@ public class planner extends javax.swing.JFrame {
 
         screenCard.add(orders, "card4");
 
+        workerCard.setBackground(new java.awt.Color(255, 255, 255));
         workerCard.setPreferredSize(new java.awt.Dimension(686, 597));
         workerCard.setLayout(null);
 
@@ -1251,6 +1253,7 @@ public class planner extends javax.swing.JFrame {
         jPanel1.add(addworkertoDB);
         addworkertoDB.setBounds(174, 591, 151, 40);
 
+        namepanel.setBackground(new java.awt.Color(255, 255, 255));
         namepanel.setPreferredSize(new java.awt.Dimension(320, 59));
         namepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1286,6 +1289,7 @@ public class planner extends javax.swing.JFrame {
         jPanel1.add(namepanel1);
         namepanel1.setBounds(290, 30, 368, 60);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setText("رقم التعريف");
@@ -1302,6 +1306,7 @@ public class planner extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(310, 170, 320, 59);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("كلمة لسر ");
