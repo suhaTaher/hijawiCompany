@@ -403,6 +403,9 @@ public class management extends javax.swing.JFrame {
 
         add.setBackground(new java.awt.Color(51, 51, 51));
         add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 addMousePressed(evt);
             }
@@ -485,6 +488,9 @@ public class management extends javax.swing.JFrame {
 
         searchWorker.setBackground(new java.awt.Color(51, 51, 51));
         searchWorker.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchWorkerMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 searchWorkerMousePressed(evt);
             }
@@ -636,6 +642,9 @@ public class management extends javax.swing.JFrame {
 
         DeleteWorkerBtn.setBackground(new java.awt.Color(51, 51, 51));
         DeleteWorkerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteWorkerBtnMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 DeleteWorkerBtnMousePressed(evt);
             }
@@ -710,6 +719,9 @@ public class management extends javax.swing.JFrame {
 
         search.setBackground(new java.awt.Color(51, 51, 51));
         search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 searchMousePressed(evt);
             }
@@ -1175,6 +1187,14 @@ public class management extends javax.swing.JFrame {
         Connection connection;
         PreparedStatement ps,p;
         try{
+            
+            
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                 p = connection.prepareStatement("select * from user where id = ?");
+                p.setInt(1,workerid);
+                ResultSet s = p.executeQuery();
+                if(s.next()){
+                                
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
             p = connection.prepareStatement("DELETE FROM user where id = ?");
             p.setInt(1,workerid);
@@ -1182,7 +1202,17 @@ public class management extends javax.swing.JFrame {
 
             if(!rs) JOptionPane.showMessageDialog(this, "تم الحذف بنجاح");
 
-            else JOptionPane.showMessageDialog(this, "Erorr");
+            else JOptionPane.showMessageDialog(this, "Error In DataBase");
+
+                    
+                }
+            
+            else
+            {
+
+                JOptionPane.showMessageDialog(this, "No Such User In DataBase");
+            }
+
 
         }
         catch (HeadlessException | SQLException ex ) {
@@ -1197,17 +1227,34 @@ public class management extends javax.swing.JFrame {
 
     private void searchWorkerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchWorkerMousePressed
         // TODO add your handling code here:
-                
-                    if(empNo.getText().isEmpty()){
-                 JOptionPane.showMessageDialog(this,"what is the user id" );
-               }
-                    else{
-                        int workerid=Integer.parseInt(this.empNo.getText());
+
+    }//GEN-LAST:event_searchWorkerMousePressed
+
+    private void addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMousePressed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_addMousePressed
+
+    private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_searchMousePressed
+
+    private void searchWorkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchWorkerMouseClicked
+        // TODO add your handling code here:
+        
+        
+        if (empNo.getText().isEmpty()){
+        JOptionPane.showMessageDialog(this, "Empty Search Bar");
+        }
+        else{
+            int workerid=Integer.parseInt(this.empNo.getText());
             Connection connection;
         PreparedStatement ps,p;
         try{
-                     connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-                  p = connection.prepareStatement("select * from user where id = ?");
+                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                 p = connection.prepareStatement("select * from user where id = ?");
                 p.setInt(1,workerid);
                 ResultSet s = p.executeQuery();
                 if(s.next()){
@@ -1220,19 +1267,23 @@ public class management extends javax.swing.JFrame {
             else
             {
 
-                JOptionPane.showMessageDialog(this, "Erorr");
+                JOptionPane.showMessageDialog(this, "No Such User In DataBase");
             }
     }
      catch (HeadlessException | SQLException ex ) {
             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
         }
-                    }
-    }//GEN-LAST:event_searchWorkerMousePressed
+        }
+        
+    }//GEN-LAST:event_searchWorkerMouseClicked
 
-    private void addMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMousePressed
+    private void DeleteWorkerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteWorkerBtnMouseClicked
         // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteWorkerBtnMouseClicked
 
-         String email=this.name1.getText();
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        // TODO add your handling code here:
+                 String email=this.name1.getText();
          String workername=this.name2.getText();
           if(workername.isEmpty() || email.isEmpty()){
                  JOptionPane.showMessageDialog(this,"Empty username or email" );
@@ -1262,6 +1313,7 @@ public class management extends javax.swing.JFrame {
             ps.setString(2,password);
             ps.setString(3,email);
             ps.setString(4,type);
+            //System.out.println(type);
             boolean rs = ps.execute();
 
             if(!rs)
@@ -1288,12 +1340,180 @@ public class management extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
         }
           }
-    }//GEN-LAST:event_addMousePressed
+    }//GEN-LAST:event_addMouseClicked
 
-    private void searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMousePressed
+    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_searchMousePressed
+Vector data = new Vector();
+        this.Tool_name.setText("");
+this.Supplier.setText("");
+this.Tool_size.setText("");
+this.sector.setText("");
+this.Area.setText("");
+this.aisle.setText("");
+this.CarierMo.setText("");
+this.colorNo.setText("");
+ this.Colors.setListData(data);
+        String TypeOfTool1="";
+       String size1="";
+       String JobOfTool1="";
+       String supplier1="";
+       String status1="";
+       int status;
+       int size=0;
+       int flag=0;
+       int isle=0;
+       int carierNo =0;
+       int ordernumber1=0;
+       int colornumber1=0;
+       int area=0;
+        String search=this.searchKey.getText();
+        char TypeOfTool=search.charAt(0);
+        Connection connection;
+        PreparedStatement ps,ps1,ps2;    
+       
+        switch (TypeOfTool) {
+            case 'D':
+                try {
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps = connection.prepareStatement("select * from dicut where name= ?");
+                    ps.setString(1,search );
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next())
+                    {
+                        TypeOfTool1=rs.getString(2);
+                        JobOfTool1=rs.getString(3);
+                        size=rs.getInt(4);
+                        area=rs.getInt(5);
+                        status=rs.getInt(6);
+                        supplier1=rs.getString(9);
+                        isle=rs.getInt(10);
+                        carierNo =rs.getInt(11);
+                        if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                            case 1:
+                                size1="70×100";
+                                break;
+                            case 2:
+                                size1="50×30";
+                                break;
+                            case 3:
+                                size1="غير ذلك";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break; 
+            case 'P':
+                try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps1 = connection.prepareStatement("select * from iplate where name= ?");
+                    ps1.setString(1,search );
+                    ResultSet rs1 = ps1.executeQuery();
+                    if(rs1.next())
+                    {
+                        TypeOfTool1=rs1.getString(2);
+                        JobOfTool1=rs1.getString(3);
+                        size=rs1.getInt(4);
+                        area=rs1.getInt(5);
+                        status=rs1.getInt(6);
+                        isle=rs1.getInt(9);
+                        carierNo =rs1.getInt(10);
+                        colornumber1=rs1.getInt(11);
+                  
+                    
+                         ps2 = connection.prepareStatement("select * from color where platename= ?");
+                         ps2.setString(1,search );
+                         ResultSet rs2 = ps2.executeQuery();
+                         while(rs2.next()){
+                             
+                            data.addElement(rs2.getString(2));
+                         }
+                             this.Colors.setListData(data);
+                        
+                          if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                            case 1:
+                                size1="70×100";
+                                break;
+                            case 2:
+                                size1="50×30";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                  
+               
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break;
+            case 'C':
+                try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                    ps1 = connection.prepareStatement("select * from iclasheh where name= ?");
+                    ps1.setString(1,search );
+                    ResultSet rs1 = ps1.executeQuery();
+                    if(rs1.next())
+                    {
+                        TypeOfTool1=rs1.getString(2);
+                        JobOfTool1=rs1.getString(3);
+                        size=rs1.getInt(4);
+                        status=rs1.getInt(6);
+                        area=rs1.getInt(5);
+                        isle=rs1.getInt(9);
+                        carierNo=rs1.getInt(10);
+                        colornumber1=rs1.getInt(11);
+                        if(status==1)status1="متوفر";
+                        if(status==0) status1="غير متوفر";
+                        switch (size) {
+                           case 1:
+                                size1="70×100";
+                                break;
+                            case 2:
+                                size1="50×30";
+                                break;
+                            case 3:
+                                size1="غير ذلك";
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    else  JOptionPane.showMessageDialog(this,"Not Found" );
+                }
+                catch (HeadlessException | SQLException ex ) {
+                    JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+                }       break;
+            default:
+                JOptionPane.showMessageDialog(this,"Not Found" );
+                break;
+        }
+        
+this.Tool_name.setText(TypeOfTool1);
+this.Supplier.setText(supplier1);
+this.Tool_size.setText(size1);
+this.sector.setText(JobOfTool1);
+this.Status.setText(status1);
+this.Area.setText(Integer.toString(area));
+this.aisle.setText(Integer.toString(isle));
+this.CarierMo.setText(Integer.toString(carierNo));
+this.colorNo.setText(Integer.toString(colornumber1));
+    }//GEN-LAST:event_searchMouseClicked
 
     /**
      * @param args the command line arguments

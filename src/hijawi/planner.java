@@ -123,6 +123,8 @@ public class planner extends javax.swing.JFrame {
         Status = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Colors = new javax.swing.JList<>();
+        search = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
         orders = new javax.swing.JPanel();
         toppanelOrders = new javax.swing.JPanel();
         ToolSearch1 = new javax.swing.JPanel();
@@ -152,15 +154,15 @@ public class planner extends javax.swing.JFrame {
         tooState = new javax.swing.JTextField();
         ToolStatus1 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
-        Delete = new javax.swing.JButton();
+        DateOfOrder = new javax.swing.JTextField();
+        DateOfFinish = new javax.swing.JTextField();
+        DeleteOrder = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
         AddOrderCard = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
-        order1 = new javax.swing.JButton();
         jPanel32 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
         ToolName = new javax.swing.JTextField();
@@ -174,27 +176,29 @@ public class planner extends javax.swing.JFrame {
         ToolStatus = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         OrderNo = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
         workerCard = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        addworkertoDB = new javax.swing.JButton();
         namepanel = new javax.swing.JPanel();
         name = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         namepanel1 = new javax.swing.JPanel();
-        name1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        name1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         workerID = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         WorkerPassWord = new javax.swing.JTextField();
-        workertype = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
+        workertype = new javax.swing.JComboBox<>();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(930, 610));
 
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
         sidePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(153, 153, 153)));
@@ -491,28 +495,61 @@ public class planner extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Colors);
 
+        search.setBackground(new java.awt.Color(51, 51, 51));
+        search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchMouseClicked(evt);
+            }
+        });
+
+        jLabel39.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("بحث");
+
+        javax.swing.GroupLayout searchLayout = new javax.swing.GroupLayout(search);
+        search.setLayout(searchLayout);
+        searchLayout.setHorizontalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        searchLayout.setVerticalGroup(
+            searchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchLayout.createSequentialGroup()
+                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)))))
+                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(78, 78, 78))))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
@@ -527,7 +564,9 @@ public class planner extends javax.swing.JFrame {
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -679,11 +718,8 @@ public class planner extends javax.swing.JFrame {
         toppanelOrders.setLayout(toppanelOrdersLayout);
         toppanelOrdersLayout.setHorizontalGroup(
             toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelOrdersLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddReq1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(AddReq1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(toppanelOrdersLayout.createSequentialGroup()
                 .addContainerGap(180, Short.MAX_VALUE)
                 .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -752,7 +788,7 @@ public class planner extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         orderCards.add(ListsCard, "card4");
@@ -773,6 +809,9 @@ public class planner extends javax.swing.JFrame {
 
         OrderSearch.setBackground(new java.awt.Color(51, 51, 51));
         OrderSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrderSearchMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 OrderSearchMousePressed(evt);
             }
@@ -794,10 +833,10 @@ public class planner extends javax.swing.JFrame {
         );
         OrderSearchLayout.setVerticalGroup(
             OrderSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        jPanel13.add(OrderSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        jPanel13.add(OrderSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 40));
 
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -833,13 +872,34 @@ public class planner extends javax.swing.JFrame {
 
         jLabel33.setText("تاريخ التسليم ");
 
-        Delete.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        Delete.setText("حذف");
-        Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
+        DeleteOrder.setBackground(new java.awt.Color(204, 0, 0));
+        DeleteOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteOrderMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                DeleteOrderMousePressed(evt);
             }
         });
+
+        jLabel37.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("حذف");
+
+        javax.swing.GroupLayout DeleteOrderLayout = new javax.swing.GroupLayout(DeleteOrder);
+        DeleteOrder.setLayout(DeleteOrderLayout);
+        DeleteOrderLayout.setHorizontalGroup(
+            DeleteOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteOrderLayout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+        DeleteOrderLayout.setVerticalGroup(
+            DeleteOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -847,37 +907,33 @@ public class planner extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel33)
-                                .addGap(70, 70, 70))
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(140, 140, 140)
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ToolStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)))
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ToolStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DateOfOrder)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel32))
-                            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(DateOfFinish, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel33))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(DeleteOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(303, 303, 303)))
                 .addContainerGap())
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,31 +944,28 @@ public class planner extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGap(59, 59, 59)
                                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(jLabel32))
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addComponent(jLabel33)))
-                        .addGap(186, 186, 186))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(132, 132, 132)
-                                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(47, 47, 47)
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel29)
-                                    .addComponent(ToolStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42)
-                                .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(55, 55, 55)
-                        .addComponent(Delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(83, 83, 83)))
+                                    .addComponent(jLabel32)
+                                    .addComponent(DateOfOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel33)
+                                    .addComponent(DateOfFinish, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addContainerGap(50, Short.MAX_VALUE)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(ToolStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(163, 163, 163)))
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57))
+                    .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tooState, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(DeleteOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123))
         );
 
         javax.swing.GroupLayout SearchDeleteCardLayout = new javax.swing.GroupLayout(SearchDeleteCard);
@@ -940,14 +993,6 @@ public class planner extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("اضافة طلبية ");
-
-        order1.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
-        order1.setText("اضافة الطلب");
-        order1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                order1ActionPerformed(evt);
-            }
-        });
 
         jLabel45.setText("اسم الأداة ");
 
@@ -998,6 +1043,35 @@ public class planner extends javax.swing.JFrame {
 
         jLabel27.setText("رقم الطلبية");
 
+        jPanel16.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel16.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel16MouseClicked(evt);
+            }
+        });
+
+        jLabel38.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("اضافة الطلب");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
@@ -1015,7 +1089,7 @@ public class planner extends javax.swing.JFrame {
                                 .addComponent(jLabel24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ToolStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel22Layout.createSequentialGroup()
                                 .addComponent(OrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1029,12 +1103,15 @@ public class planner extends javax.swing.JFrame {
                         .addComponent(Attach)
                         .addContainerGap())
                     .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addComponent(order1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(OrderNo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1064,28 +1141,26 @@ public class planner extends javax.swing.JFrame {
                     .addComponent(Attach, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(OrderNo))
-                    .addComponent(order1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(OrderNo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 136, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 75, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout AddOrderCardLayout = new javax.swing.GroupLayout(AddOrderCard);
         AddOrderCard.setLayout(AddOrderCardLayout);
         AddOrderCardLayout.setHorizontalGroup(
             AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddOrderCardLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
-                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(121, 121, 121))))
+                .addGroup(AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(202, 202, 202))
         );
         AddOrderCardLayout.setVerticalGroup(
             AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1123,6 +1198,7 @@ public class planner extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(17, 45, 57));
         jLabel7.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("اضافة عامل");
         workerCard.add(jLabel7);
@@ -1130,16 +1206,6 @@ public class planner extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
-
-        addworkertoDB.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
-        addworkertoDB.setText("اضافة");
-        addworkertoDB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addworkertoDBActionPerformed(evt);
-            }
-        });
-        jPanel1.add(addworkertoDB);
-        addworkertoDB.setBounds(90, 340, 151, 70);
 
         namepanel.setBackground(new java.awt.Color(255, 255, 255));
         namepanel.setPreferredSize(new java.awt.Dimension(320, 59));
@@ -1152,34 +1218,34 @@ public class planner extends javax.swing.JFrame {
         });
         namepanel.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 191, 35));
 
+        jLabel9.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("الايميل ");
+        jLabel9.setText("البريد الالكتروني");
         namepanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 101, 35));
 
         jPanel1.add(namepanel);
-        namepanel.setBounds(320, 90, 320, 59);
+        namepanel.setBounds(10, 20, 320, 59);
 
         namepanel1.setBackground(new java.awt.Color(255, 255, 255));
         namepanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        name1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "الاسم الثلاثي", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Traditional Arabic", 2, 14))); // NOI18N
-        name1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                name1ActionPerformed(evt);
-            }
-        });
-        namepanel1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 50));
-
+        jLabel10.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("الاسم الثلاثي ");
-        namepanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 101, 35));
+        namepanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 101, 35));
+        namepanel1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 180, 40));
 
         jPanel1.add(namepanel1);
-        namepanel1.setBounds(290, 30, 368, 60);
+        namepanel1.setBounds(320, 30, 368, 60);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel11.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("رقم التعريف");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 13, -1, -1));
 
@@ -1189,16 +1255,19 @@ public class planner extends javax.swing.JFrame {
                 workerIDActionPerformed(evt);
             }
         });
-        jPanel2.add(workerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 35));
+        jPanel2.add(workerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 200, 35));
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(310, 170, 320, 59);
+        jPanel2.setBounds(330, 170, 320, 59);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setText("كلمة لسر ");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        jLabel12.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("كلمة السر");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 60, -1));
 
         WorkerPassWord.setEditable(false);
         WorkerPassWord.addActionListener(new java.awt.event.ActionListener() {
@@ -1206,22 +1275,55 @@ public class planner extends javax.swing.JFrame {
                 WorkerPassWordActionPerformed(evt);
             }
         });
-        jPanel3.add(WorkerPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 35));
+        jPanel3.add(WorkerPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 35));
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(310, 240, 320, 59);
+        jPanel3.setBounds(330, 240, 320, 59);
 
-        workertype.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                workertypeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(workertype);
-        workertype.setBounds(290, 310, 202, 44);
-
+        jLabel30.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("المسمى الوظيفي");
         jPanel1.add(jLabel30);
-        jLabel30.setBounds(530, 310, 101, 44);
+        jLabel30.setBounds(540, 110, 90, 44);
+
+        workertype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مدير المبيعات", "قسم التخطيط", "مسؤول المخازن" }));
+        jPanel1.add(workertype);
+        workertype.setBounds(320, 110, 200, 50);
+
+        jPanel15.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel15MousePressed(evt);
+            }
+        });
+        jPanel15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel15KeyPressed(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Traditional Arabic", 3, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("اضافة");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel15);
+        jPanel15.setBounds(100, 330, 170, 50);
 
         workerCard.add(jPanel1);
         jPanel1.setBounds(0, 70, 700, 650);
@@ -1300,10 +1402,6 @@ public class planner extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-    private void name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_name1ActionPerformed
-
     private void WorkerPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkerPassWordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_WorkerPassWordActionPerformed
@@ -1311,58 +1409,6 @@ public class planner extends javax.swing.JFrame {
     private void workerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_workerIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_workerIDActionPerformed
-
-    private void addworkertoDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addworkertoDBActionPerformed
-        // TODO add your handling code here:                                              
-
-        String workername=this.name1.getText();
-        String email=this.name.getText();
-//String id=this.workerID.getText();
-//String password=this.WorkerPassWord.getText();
-        String type=this.workertype.getText();
-        Connection connection;
-        PreparedStatement ps,p;
-           try { 
-        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        SecureRandom random = new SecureRandom();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <6; i++)
-        {
-            int randomIndex = random.nextInt(chars.length());
-            sb.append(chars.charAt(randomIndex));
-        }
-        String password=sb.toString();
-             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-
-             ps = connection.prepareStatement("INSERT INTO user (username,password,eamil,type)VALUES (?,?,?,?)");
-             ps.setString(1,workername);
-             ps.setString(2,password);
-             ps.setString(3,email);
-             ps.setString(4,type);
-             boolean rs = ps.execute();
-            
-             if(!rs)
-             {
-            p = connection.prepareStatement("select * from user where username = ?");
-            p.setString(1,workername);
-            ResultSet s = p.executeQuery();
-             if(s.next()){
-             int id=s.getInt(5);
-                  JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n id="+id+"\n password="+password);
-             }
-             }
-             else 
-             {
-                
-               JOptionPane.showMessageDialog(this, "Erorr");  
-             }
-             
-        } catch (HeadlessException | SQLException ex ) {
-            JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
-        }        // TODO add your handling
-
-    
-    }//GEN-LAST:event_addworkertoDBActionPerformed
 
     private void searchKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchKeyActionPerformed
         // TODO add your handling code here:
@@ -1412,10 +1458,6 @@ public class planner extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tooStateActionPerformed
 
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteActionPerformed
-
     private void orderListsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderListsMousePressed
         // TODO add your handling code here:
         resetColor(Search_Delete);
@@ -1449,7 +1491,285 @@ public class planner extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ToolNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToolNameActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_ToolNameActionPerformed
+
+    private void FilePathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilePathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FilePathActionPerformed
+
+    private void AttachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachActionPerformed
+        // TODO add your handling code here: 
+        JFileChooser Chooser =new JFileChooser();
+        Chooser.showOpenDialog(null);
+        File f= Chooser.getSelectedFile();
+        String fileName=f.getAbsolutePath();
+        FilePath.setText(fileName);
+        
+    }//GEN-LAST:event_AttachActionPerformed
+
+    private void OrderSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderSearchMousePressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_OrderSearchMousePressed
+
+    private void jPanel15KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel15KeyPressed
+
+        // TODO add your handling code here:
+        
+   // TODO add your handling
+    }//GEN-LAST:event_jPanel15KeyPressed
+
+    private void jPanel15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MousePressed
+        // TODO add your handling code here:
+         String email=this.name.getText();
+         String workername=this.name1.getText();
+          if(workername.isEmpty() || email.isEmpty()){
+                 JOptionPane.showMessageDialog(this,"Empty username or email" );
+               }
+          
+          else{
+      
+       
+        String type=(String) this.workertype.getSelectedItem();
+        Connection connection;
+        PreparedStatement ps,p;
+        try {
+            
+            final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            SecureRandom random = new SecureRandom();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i <6; i++)
+            {
+                int randomIndex = random.nextInt(chars.length());
+                sb.append(chars.charAt(randomIndex));
+            }
+            String password=sb.toString();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+
+            ps = connection.prepareStatement("INSERT INTO user (username,password,eamil,type)VALUES (?,?,?,?)");
+            ps.setString(1,workername);
+            ps.setString(2,password);
+            ps.setString(3,email);
+            ps.setString(4,type);
+            boolean rs = ps.execute();
+
+            if(!rs)
+            {
+                p = connection.prepareStatement("select * from user where username = ?");
+                p.setString(1,workername);
+                ResultSet s = p.executeQuery();
+                if(s.next()){
+                    
+                    int id=s.getInt(5);
+                     workerID.setText(Integer.toString(id));
+                    WorkerPassWord.setText(password);
+                    JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح\n id="+id+"\n password="+password);
+                  
+                }
+            }
+            else
+            {
+
+                JOptionPane.showMessageDialog(this, "Erorr");
+            }
+
+        } catch (HeadlessException | SQLException ex ) {
+            JOptionPane.showMessageDialog(this,"Wrong \n"+ex );
+        }
+          }   
+    }//GEN-LAST:event_jPanel15MousePressed
+
+    private void DeleteOrderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteOrderMousePressed
+        // TODO add your handling code here:
+        
+                        
+
+        
+    }//GEN-LAST:event_DeleteOrderMousePressed
+
+    private void OrderSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderSearchMouseClicked
+        // TODO add your handling code here:
+         if(searchKey1.getText().isEmpty()){
+             JOptionPane.showMessageDialog(this,"what is the user id" );
+         }
+        
+        else {
+            int ONo=Integer.parseInt(searchKey1.getText());
+            Connection connection;
+            PreparedStatement ps,p;
+            try {
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                 p = connection.prepareStatement("select * from orders where ordernumber = ?");
+                 p.setInt(1,ONo);
+                 ResultSet s = p.executeQuery();
+                 
+                 if(s.next()){
+                     String ODate = s.getString(2);
+                     this.DateOfOrder.setText(ODate);
+                     
+                     String FDate = s.getString(3);
+                     this.DateOfFinish.setText(FDate); 
+                     
+                      
+                     String ToolName = s.getString(4);
+                     this.Tool_name1.setText(ToolName);    
+                     
+                     try{
+                     String FolderPath = s.getString(5);                      
+                         Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " +  FolderPath);
+                     
+                     }
+                     catch(Exception e){JOptionPane.showMessageDialog(this, "Erorr image");}
+                     
+                 }
+            
+                 else{ JOptionPane.showMessageDialog(this, "Erorr DB"); }
+                 
+            }
+            
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            
+            }
+        
+
+        }
+    }//GEN-LAST:event_OrderSearchMouseClicked
+
+    private void DeleteOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteOrderMouseClicked
+        // TODO add your handling code here:
+        
+         if(searchKey1.getText().isEmpty()){
+             JOptionPane.showMessageDialog(this, "empty field");
+         }
+        
+        else {
+             System.out.println("1");
+            int ONo=Integer.parseInt(searchKey1.getText());
+            Connection connection;
+            PreparedStatement ps,p;
+            try {
+                System.out.println("2");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+                
+                 ps = connection.prepareStatement("select * from orders where ordernumber = ?");
+                ps.setInt(1,ONo);
+                ResultSet sr = ps.executeQuery();
+                System.out.println("3");
+                if(sr.next()){
+                      System.out.println("4");
+                      p = connection.prepareStatement("DELETE FROM orders where ordernumber = ?");
+                      p.setInt(1,ONo);
+                      boolean s = p.execute();
+                 
+                     if(!s){
+                     System.out.println("5");
+                     searchKey1.setText("");
+                     JOptionPane.showMessageDialog(this, "تم الحذف بنجاح");
+                     }
+            
+                     else{ JOptionPane.showMessageDialog(this, "Error"); }
+                }
+                else{JOptionPane.showMessageDialog(this, "No Such Order In DataBase");}
+                System.out.println("6");
+
+                 
+            }
+            
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            
+            }
+        
+
+        }
+        
+    }//GEN-LAST:event_DeleteOrderMouseClicked
+
+    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
+        // TODO add your handling code here:
+               String ToolNam= ToolName.getText();
+       String Path = FilePath.getText();
+       
+         String Date2="NO DaTE WAS SET" ;
+        SimpleDateFormat D = new SimpleDateFormat();
+        Date2 = D.format(FinishDate.getDate());
+        System.out.println(Date2+" 1");
+        
+       if( ToolName.getText().isEmpty()|| FilePath.getText().isEmpty() || OrderNo.getText().isEmpty()   ){
+           //|| FinishDate.getDate().toString().isEmpty()
+           boolean x =this.FinishDate.getDateFormatString().isEmpty();
+  System.out.println(Date2+" 2");
+           JOptionPane.showMessageDialog(this, "empty fields");
+          
+       }
+       
+       else{
+          
+       try { 
+          //java.util.Date FD = new java.util.Date("mm/dd/yyy");
+         //FDate = (Date) D.parse(D.format(FinishDate.getDate()));
+         //  ODate = (Date) D.parse(D.format(OrderDate.getDate()));
+         //String Date1 = D.format(OrderDate.getDate());
+        //java.sql.Date Date1 = new java.sql.Date(FDate.getTime());
+       // java.sql.Date Date2 = new java.sql.Date(ODate.getTime());
+    
+         System.out.println(Date2+" 3");
+                 
+           
+        int ordernumber =Integer.parseInt( OrderNo.getText());
+
+       // this.FinishDate.getDateFormatString();
+        
+  
+       // SimpleDateFormat D = new SimpleDateFormat();
+        //Date2 = D.format(FinishDate.getDate());
+        
+        Connection connection;
+        PreparedStatement ps,p;
+        
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+            ps = connection.prepareStatement("INSERT INTO orders (ordernumber,OrderDate,FinishDate,ToolUsedName,fileUrl)VALUES (?,?,?,?,?)");
+    System.out.print("3");
+                ps.setInt(1,ordernumber);
+                ps.setDate(2,Tdate);
+                ps.setString(3,Date2);
+                ps.setString(4,ToolNam);
+                ps.setString(5,Path);
+         
+                boolean rs = ps.execute();
+
+            if(!rs)
+            {
+                    JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Erorr");
+           }
+
+        } catch (HeadlessException | SQLException ex ) {
+           JOptionPane.showMessageDialog(this,"Wrong \n"+ex.getLocalizedMessage() );
+       }
+       
+   
+       }
+      catch(Exception ex) {
+           JOptionPane.showMessageDialog(this,"Wrong \n"+ex.toString() );
+           
+       }
+       }
+    }//GEN-LAST:event_jPanel16MouseClicked
+
+    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
+        // TODO add your handling code here:
+                // TODO add your handling code here:
                String TypeOfTool1="";
        String size1="";
        String JobOfTool1="";
@@ -1607,92 +1927,7 @@ this.Area.setText(Integer.toString(isle));
 this.Aisle.setText(Integer.toString(shelf));
 this.Status.setText(status1);
 this.colorNo.setText(Integer.toString(colornumber1));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void workertypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_workertypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_workertypeActionPerformed
-
-    private void ToolNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToolNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToolNameActionPerformed
-
-    private void FilePathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilePathActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FilePathActionPerformed
-
-    private void AttachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AttachActionPerformed
-        // TODO add your handling code here: 
-        JFileChooser Chooser =new JFileChooser();
-        Chooser.showOpenDialog(null);
-        File f= Chooser.getSelectedFile();
-        String fileName=f.getAbsolutePath();
-        FilePath.setText(fileName);
-        
-    }//GEN-LAST:event_AttachActionPerformed
-
-    private void OrderSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderSearchMousePressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_OrderSearchMousePressed
-
-    private void order1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order1ActionPerformed
-        // TODO add your handling code here:
-       String ToolNam= ToolName.getText();
-       String Path = FilePath.getText();
-       
-       if(ToolName.getText().isEmpty()|| FilePath.getText().isEmpty() || OrderNo.getText().isEmpty() || FinishDate.getDate().toString().isEmpty() ){
-           JOptionPane.showMessageDialog(this, "empty fields");
-           System.out.print("2");
-       }
-       
-       else{
-       try { 
-          //java.util.Date FD = new java.util.Date("mm/dd/yyy");
-         //FDate = (Date) D.parse(D.format(FinishDate.getDate()));
-         //  ODate = (Date) D.parse(D.format(OrderDate.getDate()));
-         //String Date1 = D.format(OrderDate.getDate());
-        //java.sql.Date Date1 = new java.sql.Date(FDate.getTime());
-       // java.sql.Date Date2 = new java.sql.Date(ODate.getTime());
-        int ordernumber =Integer.parseInt( OrderNo.getText());
-        SimpleDateFormat D = new SimpleDateFormat();
-        String Date2 = D.format(FinishDate.getDate().toString());
-        
-        Connection connection;
-        PreparedStatement ps,p;
-        
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
-            ps = connection.prepareStatement("INSERT INTO orders (ordernumber,OrderDate,FinishDate,ToolUsedName,fileUrl)VALUES (?,?,?,?,?)");
-   
-                ps.setInt(1,ordernumber);
-                ps.setDate(2,Tdate);
-                ps.setString(3,Date2);
-                ps.setString(4,ToolNam);
-                ps.setString(5,Path);
-         
-                boolean rs = ps.execute();
-
-            if(!rs)
-            {
-                    JOptionPane.showMessageDialog(this, "تم الاضافة بنجاح");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "Erorr");
-           }
-
-        } catch (HeadlessException | SQLException ex ) {
-           JOptionPane.showMessageDialog(this,"Wrong \n"+ex.getLocalizedMessage() );
-       }
-       
-       }
-      catch(Exception ex) {
-           JOptionPane.showMessageDialog(this,"Wrong \n"+ex.toString() );
-           
-       }
-       }
-    }//GEN-LAST:event_order1ActionPerformed
+    }//GEN-LAST:event_searchMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1739,7 +1974,9 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JButton Attach;
     private javax.swing.JTextField CarierNo;
     private javax.swing.JList<String> Colors;
-    private javax.swing.JButton Delete;
+    private javax.swing.JTextField DateOfFinish;
+    private javax.swing.JTextField DateOfOrder;
+    private javax.swing.JPanel DeleteOrder;
     private javax.swing.JTextField FilePath;
     private com.toedter.calendar.JDateChooser FinishDate;
     private javax.swing.JLabel ListOrder;
@@ -1761,14 +1998,11 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JTextField Tool_name1;
     private javax.swing.JTextField Tool_size;
     private javax.swing.JTextField WorkerPassWord;
-    private javax.swing.JButton addworkertoDB;
     private javax.swing.JTextField colorNo;
     private javax.swing.JPanel endReq;
     private javax.swing.JPanel endWorker1;
     private javax.swing.JPanel endtool;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1786,6 +2020,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1798,6 +2033,9 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1812,6 +2050,8 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel22;
@@ -1832,11 +2072,11 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel namepanel;
     private javax.swing.JPanel namepanel1;
     private javax.swing.JPanel newOrder;
-    private javax.swing.JButton order1;
     private javax.swing.JPanel orderCards;
     private javax.swing.JPanel orderLists;
     private javax.swing.JPanel orders;
     private javax.swing.JPanel screenCard;
+    private javax.swing.JPanel search;
     private javax.swing.JTextField searchKey;
     private javax.swing.JTextField searchKey1;
     private javax.swing.JPanel searchToolCard;
@@ -1847,6 +2087,6 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel toppanelOrders;
     private javax.swing.JPanel workerCard;
     private javax.swing.JTextField workerID;
-    private javax.swing.JTextField workertype;
+    private javax.swing.JComboBox<String> workertype;
     // End of variables declaration//GEN-END:variables
 }
