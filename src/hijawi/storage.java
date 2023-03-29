@@ -17,6 +17,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author ASUS
@@ -651,6 +653,11 @@ public class storage extends javax.swing.JFrame {
         jPanel22.add(CarierNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 150, 40));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel1MouseClicked(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Traditional Arabic", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 0, 0));
@@ -1904,6 +1911,232 @@ this.isle.setText(Integer.toString(isle));
 this.CarierNo1.setText(Integer.toString(carierNo));
 this.colorNo1.setText(Integer.toString(colornumber1));
     }//GEN-LAST:event_searchMouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        // TODO add your handling code here:
+        String otype=(String) this.jComboBox2.getSelectedItem(); 
+boolean empty=this.searchKey1.getText().isEmpty();
+
+  if(otype=="استعارة" && !empty){
+      String search=this.searchKey1.getText();
+      char type=search.charAt(0);
+      int status=0;
+      if(type=='D'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM dicut WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s1 = ps.executeQuery();
+                if(s1.next()) status =s1.getInt(1);
+                if(status==1){
+               PreparedStatement ps1 = connection.prepareStatement("UPDATE dicut SET status=? WHERE name=?");
+               ps1.setInt(1,0);
+                 ps1.setString(2,search);
+                    boolean rs = ps1.execute();
+             if(!rs)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة غير متوفرة تمت استعارتها");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      }
+      else  if(type=='P'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iplate WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s2 = ps.executeQuery();
+                if(s2.next()) status =s2.getInt(1);
+                if(status==1){
+               PreparedStatement ps2 = connection.prepareStatement("UPDATE iplate SET status=? WHERE name=?");
+               ps2.setInt(1,0);
+                 ps2.setString(2,search);
+                    boolean rs2 = ps2.execute();
+             if(!rs2)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة غير متوفرة تمت استعارتها");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+            else  if(type=='C'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iclasheh WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s3 = ps.executeQuery();
+                if(s3.next()) status =s3.getInt(1);
+                if(status==1){
+               PreparedStatement ps3 = connection.prepareStatement("UPDATE iclasheh SET status=? WHERE name=?");
+               ps3.setInt(1,0);
+               ps3.setString(2,search);
+                boolean rs3 = ps3.execute();
+             if(!rs3)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة غير متوفرة تمت استعارتها");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+  }
+    if(otype=="ارجاع" && !empty){
+      String search=this.searchKey1.getText();
+      char type=search.charAt(0);
+      int status=0;
+      if(type=='D'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM dicut WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s1 = ps.executeQuery();
+                if(s1.next()) status =s1.getInt(1);
+                if(status==0){
+               PreparedStatement ps1 = connection.prepareStatement("UPDATE dicut SET status=? WHERE name=?");
+               ps1.setInt(1,1);
+                 ps1.setString(2,search);
+                    boolean rs = ps1.execute();
+             if(!rs)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة  متوفرة ");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      }
+      else  if(type=='P'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iplate WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s2 = ps.executeQuery();
+                if(s2.next()) status =s2.getInt(1);
+                if(status==0){
+               PreparedStatement ps2 = connection.prepareStatement("UPDATE iplate SET status=? WHERE name=?");
+               ps2.setInt(1,1);
+                 ps2.setString(2,search);
+                    boolean rs2 = ps2.execute();
+             if(!rs2)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة متوفرة");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+            else  if(type=='C'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iclasheh WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s3 = ps.executeQuery();
+                if(s3.next()) status =s3.getInt(1);
+                if(status==0){
+               PreparedStatement ps3 = connection.prepareStatement("UPDATE iclasheh SET status=? WHERE name=?");
+               ps3.setInt(1,1);
+               ps3.setString(2,search);
+                boolean rs3 = ps3.execute();
+             if(!rs3)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+               
+                }
+                else JOptionPane.showMessageDialog(this, "الاداة متوفرة");
+                
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+  }
+        if(otype=="حذف" && !empty){
+      String search=this.searchKey1.getText();
+      char type=search.charAt(0);
+      int status=0;
+      if(type=='D'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM dicut WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s1 = ps.executeQuery();
+                if(s1.next()) {
+                     PreparedStatement ps1 = connection.prepareStatement("DELETE FROM dicut WHERE  name=?");  
+                 ps1.setString(1,search);
+                    boolean rs1 = ps1.execute();
+             if(!rs1)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+                }  
+                   JOptionPane.showMessageDialog(this, "لم يتم العثور على الاداة");
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      }
+      else  if(type=='P'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iplate WHERE  name=?");
+              ps.setString(1,search);
+                ResultSet s1 = ps.executeQuery();
+                if(s1.next()) {
+                     PreparedStatement ps1 = connection.prepareStatement("DELETE FROM iplate  WHERE  name=?");  
+                 ps1.setString(1,search);
+                    boolean rs1 = ps1.execute();
+             if(!rs1)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+                }   
+                   JOptionPane.showMessageDialog(this, "لم يتم العثور على الاداة");
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+            else  if(type=='C'){
+          Connection connection;
+          try {
+              connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/compony","root","");
+              PreparedStatement ps = connection.prepareStatement("SELECT status FROM iclasheh WHERE  name=?");
+              ps.setString(1,search);
+               ResultSet s1 = ps.executeQuery();
+              if(s1.next()) {
+                     PreparedStatement ps1 = connection.prepareStatement("DELETE FROM iclasheh  WHERE  name=?");  
+                 ps1.setString(1,search);
+                    boolean rs1 = ps1.execute();
+             if(!rs1)JOptionPane.showMessageDialog(this, "تم ىنجاح");
+             else  JOptionPane.showMessageDialog(this, "Erorr"); 
+                }  
+              JOptionPane.showMessageDialog(this, "لم يتم العثور على الاداة");
+          } catch (SQLException ex) {
+              Logger.getLogger(storage.class.getName()).log(Level.SEVERE, null, ex);
+          }
+         
+      } 
+  }
+    }//GEN-LAST:event_jPanel1MouseClicked
 
     /**
      * @param args the command line arguments

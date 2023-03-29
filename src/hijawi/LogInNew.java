@@ -286,9 +286,7 @@ public class LogInNew extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "invaled account or password");
              }
              
-        } catch (Exception ex ) {
-            JOptionPane.showMessageDialog(this,"Wrong Email and/or Password \n"+ex );
-        } 
+        } catch (Exception ex ) { JOptionPane.showMessageDialog(this,"Wrong Email and/or Password \n"+ex );} 
                        }
     }//GEN-LAST:event_LogInButton1MouseClicked
 
