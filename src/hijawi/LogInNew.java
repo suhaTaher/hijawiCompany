@@ -221,6 +221,7 @@ public class LogInNew extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UserName3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserName3ActionPerformed

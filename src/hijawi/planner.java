@@ -199,6 +199,7 @@ public class planner extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(930, 610));
 
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
         sidePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(153, 153, 153)));
@@ -788,7 +789,7 @@ public class planner extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         orderCards.add(ListsCard, "card4");
@@ -977,7 +978,7 @@ public class planner extends javax.swing.JFrame {
                 .addGroup(SearchDeleteCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 114, Short.MAX_VALUE))
+                .addGap(0, 199, Short.MAX_VALUE))
         );
         SearchDeleteCardLayout.setVerticalGroup(
             SearchDeleteCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1346,6 +1347,7 @@ public class planner extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ToolSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToolSearchMousePressed
