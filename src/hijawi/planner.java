@@ -176,7 +176,7 @@ public class planner extends javax.swing.JFrame {
         ToolStatus = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         OrderNo = new javax.swing.JTextField();
-        jPanel16 = new javax.swing.JPanel();
+        addTheOrder = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         workerCard = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -199,7 +199,6 @@ public class planner extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(930, 610));
 
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
         sidePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(153, 153, 153)));
@@ -719,16 +718,18 @@ public class planner extends javax.swing.JFrame {
         toppanelOrders.setLayout(toppanelOrdersLayout);
         toppanelOrdersLayout.setHorizontalGroup(
             toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(AddReq1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(toppanelOrdersLayout.createSequentialGroup()
                 .addContainerGap(180, Short.MAX_VALUE)
-                .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(Search_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
+                .addGroup(toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ToolSearch1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddReq1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, toppanelOrdersLayout.createSequentialGroup()
+                        .addComponent(newOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(Search_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(orderLists, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104))))
         );
         toppanelOrdersLayout.setVerticalGroup(
             toppanelOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -877,6 +878,9 @@ public class planner extends javax.swing.JFrame {
         DeleteOrder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteOrderMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DeleteOrderMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 DeleteOrderMousePressed(evt);
@@ -1044,11 +1048,11 @@ public class planner extends javax.swing.JFrame {
 
         jLabel27.setText("رقم الطلبية");
 
-        jPanel16.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel16.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+        addTheOrder.setBackground(new java.awt.Color(51, 51, 51));
+        addTheOrder.setForeground(new java.awt.Color(51, 51, 51));
+        addTheOrder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel16MouseClicked(evt);
+                addTheOrderMouseClicked(evt);
             }
         });
 
@@ -1057,18 +1061,18 @@ public class planner extends javax.swing.JFrame {
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel38.setText("اضافة الطلب");
 
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
+        javax.swing.GroupLayout addTheOrderLayout = new javax.swing.GroupLayout(addTheOrder);
+        addTheOrder.setLayout(addTheOrderLayout);
+        addTheOrderLayout.setHorizontalGroup(
+            addTheOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addTheOrderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+        addTheOrderLayout.setVerticalGroup(
+            addTheOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addTheOrderLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1111,7 +1115,7 @@ public class planner extends javax.swing.JFrame {
                         .addGap(20, 20, 20))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addTheOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
         );
         jPanel22Layout.setVerticalGroup(
@@ -1148,7 +1152,7 @@ public class planner extends javax.swing.JFrame {
                         .addComponent(OrderNo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addTheOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 75, Short.MAX_VALUE))
         );
 
@@ -1157,19 +1161,21 @@ public class planner extends javax.swing.JFrame {
         AddOrderCardLayout.setHorizontalGroup(
             AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddOrderCardLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(537, Short.MAX_VALUE)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(202, 202, 202))
+            .addGroup(AddOrderCardLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AddOrderCardLayout.setVerticalGroup(
             AddOrderCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddOrderCardLayout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         orderCards.add(AddOrderCard, "card2");
@@ -1693,7 +1699,7 @@ public class planner extends javax.swing.JFrame {
         
     }//GEN-LAST:event_DeleteOrderMouseClicked
 
-    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
+    private void addTheOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTheOrderMouseClicked
         // TODO add your handling code here:
                String ToolNam= ToolName.getText();
        String Path = FilePath.getText();
@@ -1767,7 +1773,7 @@ public class planner extends javax.swing.JFrame {
            
        }
        }
-    }//GEN-LAST:event_jPanel16MouseClicked
+    }//GEN-LAST:event_addTheOrderMouseClicked
 
     private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
         // TODO add your handling code here:
@@ -1931,6 +1937,10 @@ this.Status.setText(status1);
 this.colorNo.setText(Integer.toString(colornumber1));
     }//GEN-LAST:event_searchMouseClicked
 
+    private void DeleteOrderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteOrderMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteOrderMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -2000,6 +2010,7 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JTextField Tool_name1;
     private javax.swing.JTextField Tool_size;
     private javax.swing.JTextField WorkerPassWord;
+    private javax.swing.JPanel addTheOrder;
     private javax.swing.JTextField colorNo;
     private javax.swing.JPanel endReq;
     private javax.swing.JPanel endWorker1;
@@ -2053,7 +2064,6 @@ this.colorNo.setText(Integer.toString(colornumber1));
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel22;
